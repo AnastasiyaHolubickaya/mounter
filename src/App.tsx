@@ -12,9 +12,7 @@ function App() {
       <section className={styles.content}>
         <Outlet />
       </section>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </>
   );
 }

@@ -1,18 +1,16 @@
-import { Link } from 'react-router-dom';
+// * Base
+import cn from 'classnames';
+import Navigation from './Navigation/Navigation';
+// * Style
+import baseStyles from '../../styles/base.module.css';
 import styles from './Header.module.css';
 
-interface IComponentProps {}
-
-const Header: React.FC<IComponentProps> = () => {
+const Header = () => {
   return (
-    <div className={styles.navigation}>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/blog">Blog</Link>
-      <Link to="/contact">Contact</Link>
-      <Link to="/gallery">Gallery</Link>
-      <Link to="/service">Service</Link>
-      <Link to="/team">Team</Link>
+    <div className={cn([baseStyles.wrapper])}>
+      <nav className={styles.navigation}>
+        <Navigation />
+      </nav>
     </div>
   );
 };

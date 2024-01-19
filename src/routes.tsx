@@ -1,13 +1,18 @@
+// * Base
 import { createBrowserRouter } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
+// * Components
 import App from './App';
 import Loading from './components/Loading/Loading';
-import { Suspense, lazy } from 'react';
+// * Pages
 import Home from './pages/Home/Home';
 
-interface IElementProps {
+// * Types
+type ElementPropsType = {
   component: React.ReactNode;
-}
+};
 
+//* Lasy Loading
 const About = lazy(() => import('./pages/About/About'));
 const Blog = lazy(() => import('./pages/Blog/Blog'));
 const Contact = lazy(() => import('./pages/Contact/Contact'));
@@ -15,8 +20,9 @@ const Gallery = lazy(() => import('./pages/Gallery/Gallery'));
 const Service = lazy(() => import('./pages/Service/Service'));
 const Team = lazy(() => import('./pages/Team/Team'));
 const Details = lazy(() => import('./pages/Blog/Blog-details/Details'));
+const Registration = lazy(() => import('./pages/Registration/Registration'));
 
-const Element: React.FC<IElementProps> = ({ component }) => {
+const Element = ({ component }: ElementPropsType) => {
   return <Suspense fallback={<Loading />}>{component}</Suspense>;
 };
 
@@ -64,6 +70,11 @@ export default createBrowserRouter([
       {
         path: '/team',
         element: <Element component={<Team />} />,
+        children: [],
+      },
+      {
+        path: '/registration',
+        element: <Element component={<Registration />} />,
         children: [],
       },
     ],
