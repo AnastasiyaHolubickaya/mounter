@@ -1,34 +1,58 @@
 import express, { json } from 'express';
 import cors from 'cors';
 
-import config from './config/db.js';
-import mongoose from 'mongoose';
-
-console.log(config.db);
-
-//*Connect for db
-mongoose.connect(config.db, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-mongoose.connection.on('connected', () => {
-  console.log('Connected to DB');
-  // log(chalk.green.underline('Connected to DB'));
-});
-mongoose.connection.on('error', (error) => {
-  console.log(`Connected to DB failed: ${error}`);
-  //log(chalk.magenta('Connected to DB failed') + chalk.red(error));
-});
-
 const port = 3000;
 const app = express();
 
 app.use(json());
 app.use(cors());
 
-app.use('/users', users);
+app.post('/api/registration', (request, response) => {
+  try {
+    const { firstName, lastName, password, email, phone } = request.body;
 
-//app.use(express.static('./dist'));
+    const errors = {};
+    let isError = false;
+
+    if (!firstName) {
+      isError = true;
+
+      errors.firstName = 'First name is required!';
+    }
+
+    if (!lastName) {
+      isError = true;
+
+      errors.lastName = 'Last name is required!';
+    }
+
+    if (!password) {
+      isError = true;
+
+      errors.password = 'Password is required!';
+    }
+
+    if (!email) {
+      isError = true;
+
+      errors.email = 'Email  is required!';
+    }
+
+    if (!phone) {
+      isError = true;
+
+      errors.phone = 'Phone number is required!';
+    }
+
+    if (isError) {
+      return response.status(400).json(errors);
+    }
+
+    response.status(201).json({ message: 'Sucsess!' });
+  } catch (error) {
+    response.status(500).json({ message: 'Server error' });
+  }
+});
 
 app.listen(port, () => {
   console.log(` Server started in port: ${port} `);

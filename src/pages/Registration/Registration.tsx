@@ -93,11 +93,6 @@ const Registration = () => {
       .finally(() => {
         setSubmitting(false);
       });
-
-    // setTimeout(() => {
-    //   alert(JSON.stringify(values, null, 2));
-    //   resetForm({ values: initialValues });
-    // }, 5000);
   };
 
   return (
