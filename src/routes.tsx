@@ -21,6 +21,7 @@ const Service = lazy(() => import('./pages/Service/Service'));
 const Team = lazy(() => import('./pages/Team/Team'));
 const Details = lazy(() => import('./pages/Blog/Blog-details/Details'));
 const Registration = lazy(() => import('./pages/Registration/Registration'));
+const Auth = lazy(() => import('./pages/Auth/Auth'));
 
 const Element = ({ component }: ElementPropsType) => {
   return <Suspense fallback={<Loading />}>{component}</Suspense>;
@@ -70,6 +71,11 @@ export default createBrowserRouter([
       {
         path: '/team',
         element: <Element component={<Team />} />,
+        children: [],
+      },
+      {
+        path: '/auth',
+        element: <Element component={<Auth />} />,
         children: [],
       },
       {

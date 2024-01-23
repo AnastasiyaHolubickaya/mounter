@@ -15,16 +15,16 @@ const list = [
   ],
   [
     {
-      path: '#',
-      text: 'PAGES',
-    },
-    {
       path: '/contact',
       text: 'CONTACT',
     },
     {
-      path: '/registration',
+      path: '/auth',
       text: 'SIGN/IN',
+    },
+    {
+      path: '/registration',
+      text: 'REGISTRATION',
     },
   ],
 ];

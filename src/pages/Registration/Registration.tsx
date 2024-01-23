@@ -16,7 +16,6 @@ type FormValuesType = {
 //* Regilar expretions
 const EMAIL_REGEXP = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 const PASS_REGEXP = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-const NAME_REGEXP = /^[A-Za-z\s]{2,30}$/;
 const PHONE_REGEXP = /^\+?\d{8,20}$/;
 
 const initialValues: FormValuesType = {
@@ -48,16 +47,10 @@ const Registration = () => {
     //*First Name
     if (!values.firstName) {
       errors.firstName = 'First name  is Required';
-    } else if (!NAME_REGEXP.test(values.firstName)) {
-      errors.firstName =
-        'Name can contain letters, spaces and must be between 2 and 30 chars long';
     }
     //*Last Name
     if (!values.lastName) {
       errors.lastName = 'Last name  is Required';
-    } else if (!NAME_REGEXP.test(values.lastName)) {
-      errors.lastName =
-        'Name can contain letters, spaces and must be between 2 and 30 chars long';
     }
     //*Phone number
     if (!values.phone) {
@@ -75,17 +68,17 @@ const Registration = () => {
     { resetForm, setErrors, setSubmitting }: FormikHelpers<FormValuesType>
   ) => {
     axios
-      .post('http://localhost:3000/api/registration', values)
-      .then((response) => {
+      .post('http://localhost:3000/users/registration', values)
+      .then(({ data }) => {
         // обработка успешного запроса
         resetForm({ values: initialValues });
 
-        console.log(response);
+        console.log(data);
       })
       .catch(({ response }) => {
         // обработка ошибки
         if (response.status === 500) {
-          return console.log('Server error');
+          return console.log('Server error!!!!!!!!!!!!!!!!!');
         }
         setErrors(response.data);
         //console.log(response.data);
@@ -176,7 +169,7 @@ const Registration = () => {
               <input
                 id="password"
                 name="password"
-                type="text"
+                type="password"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.password}

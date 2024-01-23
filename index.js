@@ -1,59 +1,25 @@
 import express, { json } from 'express';
 import cors from 'cors';
+import config from './config/bd.js';
+import mongoose from 'mongoose';
+import users from './routes/users/users.js';
 
 const port = 3000;
 const app = express();
 
+// * Connect to DB
+mongoose.connect(config.db);
+mongoose.connection.on('connected', () => console.log('Connected to DB!'));
+mongoose.connection.on('error', (error) =>
+  console.log(`Connected to DB  failed: ${error}`)
+);
+
+// * Config
 app.use(json());
 app.use(cors());
 
-app.post('/api/registration', (request, response) => {
-  try {
-    const { firstName, lastName, password, email, phone } = request.body;
+// * Routes
+app.use('/users', users);
 
-    const errors = {};
-    let isError = false;
-
-    if (!firstName) {
-      isError = true;
-
-      errors.firstName = 'First name is required!';
-    }
-
-    if (!lastName) {
-      isError = true;
-
-      errors.lastName = 'Last name is required!';
-    }
-
-    if (!password) {
-      isError = true;
-
-      errors.password = 'Password is required!';
-    }
-
-    if (!email) {
-      isError = true;
-
-      errors.email = 'Email  is required!';
-    }
-
-    if (!phone) {
-      isError = true;
-
-      errors.phone = 'Phone number is required!';
-    }
-
-    if (isError) {
-      return response.status(400).json(errors);
-    }
-
-    response.status(201).json({ message: 'Sucsess!' });
-  } catch (error) {
-    response.status(500).json({ message: 'Server error' });
-  }
-});
-
-app.listen(port, () => {
-  console.log(` Server started in port: ${port} `);
-});
+// * Start server
+app.listen(port, () => console.log(` Server started in port: ${port} `));
