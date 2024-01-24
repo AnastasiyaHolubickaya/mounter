@@ -1,4 +1,22 @@
-.navigation {
-  max-width: 1140px;
-  margin: 0 auto;
+.header {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  border: 1px solid grey;
+}
+
+.mobile_navigation {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    position: fixed;
+    background-color: #0c1923;
+    top: 0;
+  }
 }

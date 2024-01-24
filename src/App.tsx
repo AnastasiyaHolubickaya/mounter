@@ -6,9 +6,7 @@ import Footer from './components/Footer/Footer';
 function App() {
   return (
     <>
-      <header>
-        <Header />
-      </header>
+      <Header />
       <section className={styles.content}>
         <Outlet />
       </section>

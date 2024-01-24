@@ -1,18 +1,44 @@
-// * Base
-import cn from 'classnames';
-import Navigation from './Navigation/Navigation';
-// * Style
-import baseStyles from '../../styles/base.module.css';
+//*Base
+import { memo, useCallback, useEffect, useState } from 'react';
+// * Styles
 import styles from './Header.module.css';
+//*Components
+import Wrapper from '../Wrapper/Wrapper';
+import Navigation from './Navigation/Navigation';
+import Burger from '../Burger/Burger';
+import Logo from '../Logo/Logo';
 
 const Header = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 767);
+  const [open, setOpen] = useState(false);
+
+  const handleResize = useCallback(() => {
+    setIsMobile(window.innerWidth < 767);
+  }, [setIsMobile]);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [handleResize]);
+
   return (
-    <div className={cn([baseStyles.wrapper])}>
-      <nav className={styles.navigation}>
-        <Navigation />
-      </nav>
-    </div>
+    <header className={styles.header}>
+      <Wrapper>
+        {!isMobile ? (
+          <Navigation isMobile={isMobile} />
+        ) : (
+          <div className={styles.mobile_navigation}>
+            <Logo />
+            <Burger open={open} setOpen={setOpen} />
+          </div>
+        )}
+        {open && <Navigation isMobile={isMobile} />}
+      </Wrapper>
+    </header>
   );
 };
 
-export default Header;
+export default memo(Header);

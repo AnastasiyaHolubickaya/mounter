@@ -2,6 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.MenuMobile {
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0;
+  background: #0c1923;
 }
 
 .link {
@@ -19,4 +29,38 @@
 .list {
   display: flex;
   gap: 50px;
+}
+
+.logo {
+  padding-bottom: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .list {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .link {
+    padding: 1em 5%;
+    font-size: 15px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      color: var(--c-secondary);
+    }
+  }
+
+  .logo {
+    /* order: -1; */
+    display: none;
+  }
 }

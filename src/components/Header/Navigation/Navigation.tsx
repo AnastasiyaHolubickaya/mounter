@@ -1,45 +1,55 @@
 // * Base
 import { Link } from 'react-router-dom';
-import Logo from '../../Logo/Logo';
+import cn from 'classnames';
 // * Data
 import { list } from './Navigation.data';
 // * Style
 import styles from './Navigation.module.css';
+//*Components
+import Logo from '../../Logo/Logo';
 
-type IProps = {
+type propsType = {
   path: string;
   text: string;
 };
 
-const Navigation = () => {
+type navigationPropsType = {
+  isMobile: boolean;
+};
+
+const Navigation = ({ isMobile }: navigationPropsType) => {
   return (
-    <ul className={styles.navigationMenu}>
-      <div className={styles.list}>
-        {list[0].map((element, elIndex) => (
-          <Item
-            key={'list item -' + element + elIndex}
-            path={element.path}
-            text={element.text}
-          />
-        ))}
-      </div>
-      <li>
-        <Logo />
-      </li>
-      <div className={styles.list}>
-        {list[1].map((element, elIndex) => (
-          <Item
-            key={'list item -' + element + elIndex}
-            path={element.path}
-            text={element.text}
-          />
-        ))}
-      </div>
-    </ul>
+    <>
+      <ul
+        className={cn([!isMobile ? styles.navigationMenu : styles.MenuMobile])}
+      >
+        <div className={styles.list}>
+          {list[0].map((element, elIndex) => (
+            <Item
+              key={'list item -' + element + elIndex}
+              path={element.path}
+              text={element.text}
+            />
+          ))}
+        </div>
+        <li className={styles.logo}>
+          <Logo />
+        </li>
+        <div className={styles.list}>
+          {list[1].map((element, elIndex) => (
+            <Item
+              key={'list item -' + element + elIndex}
+              path={element.path}
+              text={element.text}
+            />
+          ))}
+        </div>
+      </ul>
+    </>
   );
 };
 
-const Item = ({ path, text }: IProps) => {
+const Item = ({ path, text }: propsType) => {
   return (
     <li className={styles.item}>
       <Link to={path} className={styles.link}>
