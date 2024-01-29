@@ -1,16 +1,15 @@
-import styles from './Home.module.css'
+//mport styles from './Home.module.css';
+
+import Feature from '../../components/Feature/Feature';
 
 interface IComponentProps {}
 
-const Home:React.FC<IComponentProps> = () => {
- 
-
+const Home: React.FC<IComponentProps> = () => {
   return (
     <>
-    <h1 className={styles.wrapper}>Home page</h1>
-     
+      <Feature />
     </>
-  )
-}
+  );
+};
 
 export default Home;

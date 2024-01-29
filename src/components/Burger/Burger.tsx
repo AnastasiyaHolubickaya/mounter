@@ -5,8 +5,8 @@ const StyledBurger = styled.button<{ open: boolean }>`
   position: absolute;
   right: 15px;
   top: 15px;
-  width: 2rem;
-  height: 2rem;
+  width: 22px;
+  height: 22px;
   padding: 0;
   background: transparent;
   display: flex;
@@ -18,10 +18,9 @@ const StyledBurger = styled.button<{ open: boolean }>`
   z-index: 1;
   div {
     position: relative;
-    width: 2rem;
-    height: 0.25rem;
-    border-radius: 10px;
-    background-color: red;
+    width: 22px;
+    height: 3px;
+    background-color: white;
     transition: all 0.3s linear;
     transform-origin: 1px;
   }

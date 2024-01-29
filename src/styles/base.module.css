@@ -1,0 +1,19 @@
+.adaptive_font_nav {
+  --pc-size: 15;
+  --mob-size: 13;
+  --add-size: calc(var(--pc-size) - var(--mob-size));
+  --add-mob-size: calc(var(--add-size) + var(--add-size) * 0.7);
+
+  @media screen and (max-width: 767px) {
+    font-size: calc(
+      var(--mob-size) + var(--add-mob-size) *
+        ((100vw - 320px) / var(--max-width))
+    );
+  }
+
+  @media screen and (min-width: 767px) {
+    font-size: calc(
+      var(--mob-size) + var(--add-size) * (100vw / var(--max-width))
+    );
+  }
+}

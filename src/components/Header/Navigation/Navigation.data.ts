@@ -1,5 +1,5 @@
-const list = [
-  [
+const list = {
+  menuFirst: [
     {
       path: '/',
       text: 'HOME',
@@ -13,7 +13,7 @@ const list = [
       text: 'GALLERY',
     },
   ],
-  [
+  menuSecond: [
     {
       path: '/contact',
       text: 'CONTACT',
@@ -27,6 +27,6 @@ const list = [
       text: 'REGISTRATION',
     },
   ],
-];
+};
 
-export { list };
+export default list;

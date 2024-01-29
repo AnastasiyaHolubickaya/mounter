@@ -5,6 +5,7 @@
   max-width: 1140px;
   width: 100%;
   margin: 0 auto;
+  transition: all 0.3s ease-out 0s;
 }
 
 .MenuMobile {
@@ -12,11 +13,13 @@
   justify-content: flex-start;
   margin: 0;
   background: #0c1923;
+  margin-top: 50px;
+  transition: all 0.3s ease-out 0s;
+  overflow: hidden;
 }
 
 .link {
   padding-inline: 25px;
-  font-size: 15px;
   font-weight: 600;
   line-height: 16px;
   color: var(--c-third);
@@ -24,15 +27,20 @@
   &:hover {
     color: var(--c-secondary);
   }
+  @media screen and (max-width: 950px) {
+    padding-inline: 10px;
+  }
 }
 
 .list {
   display: flex;
   gap: 50px;
-}
-
-.logo {
-  padding-bottom: 40px;
+  @media screen and (max-width: 1071px) {
+    gap: 20px;
+  }
+  @media screen and (max-width: 950px) {
+    gap: 5px;
+  }
 }
 
 .hidden {
@@ -48,7 +56,7 @@
 
   .link {
     padding: 1em 5%;
-    font-size: 15px;
+
     display: block;
     width: 100%;
     text-align: left;

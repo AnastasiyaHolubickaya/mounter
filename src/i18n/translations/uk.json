@@ -1,0 +1,46 @@
+{
+  "Welcome to React": "Bienvenue à React et react-i18next",
+  "button": {
+    "text1": "ho {{num}}"
+  },
+  "list": {
+    "menuFirst": [
+      {
+        "path": "/",
+        "text": "ГОЛОВНА"
+      },
+      {
+        "path": "/about",
+        "text": "ПРО НАС"
+      },
+      {
+        "path": "/gallery",
+        "text": "ГАЛЕРЕЯ"
+      }
+    ],
+    "menuSecond": [
+      {
+        "path": "/contact",
+        "text": "КОНТАКТИ"
+      },
+      {
+        "path": "/auth",
+        "text": "УВІЙТИ"
+      },
+      {
+        "path": "/registration",
+        "text": "РЕЄСТРАЦІЯ"
+      }
+    ]
+  },
+  "home": "домашня сторинка",
+  "titleFeature": "особливість",
+  "subTitle":"Доступно багато варіацій уривків Lorem Ipsum, але більшість зазнали змін, але більшість у тій чи іншій формі",
+  "titleGallery": "галерея",
+  "titleTeam": "команда",
+  "titleSkill": "майстерність",
+  "titlePricing": "ціноутворення",
+  "titleServices": "послуги",
+  "titleFaq":"запитання й відповіді",
+  "titleContact": "контакти"
+}

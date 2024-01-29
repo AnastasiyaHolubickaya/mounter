@@ -9,6 +9,7 @@ import Burger from '../Burger/Burger';
 import Logo from '../Logo/Logo';
 
 const Header = () => {
+  // document.title = 'my title';
   const [isMobile, setIsMobile] = useState(window.innerWidth < 767);
   const [open, setOpen] = useState(false);
 
@@ -27,15 +28,14 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Wrapper>
-        {!isMobile ? (
-          <Navigation isMobile={isMobile} />
-        ) : (
+        {isMobile && (
           <div className={styles.mobile_navigation}>
             <Logo />
             <Burger open={open} setOpen={setOpen} />
           </div>
         )}
-        {open && <Navigation isMobile={isMobile} />}
+        {isMobile && open && <Navigation isMobile={isMobile} />}
+        {!isMobile && <Navigation isMobile={isMobile} />}
       </Wrapper>
     </header>
   );

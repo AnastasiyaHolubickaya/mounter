@@ -1,0 +1,35 @@
+.title {
+  position: relative;
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  margin: 0 auto;
+  width: min-content;
+
+  @media screen and (max-width: 767px) {
+    font-size: 24px;
+  }
+}
+
+.title::before {
+  background: var(--c-third) none repeat scroll 0 0;
+  bottom: -65px;
+  content: '';
+  height: 40px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 2px;
+}
+
+.subtitle {
+  display: block;
+  max-width: 764px;
+  color: #666666;
+  font-size: 18px;
+  line-height: 30px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px;
+}

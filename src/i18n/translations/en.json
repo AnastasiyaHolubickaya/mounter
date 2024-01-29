@@ -1,0 +1,46 @@
+{
+  "Welcome to React": "Welcome to React and react-i18next",
+  "button": {
+    "text1": "hi {{num}}"
+  },
+  "list": {
+    "menuFirst": [
+      {
+        "path": "/",
+        "text": "HOME"
+      },
+      {
+        "path": "/about",
+        "text": "ABOUT US"
+      },
+      {
+        "path": "/gallery",
+        "text": "GALLERY"
+      }
+    ],
+    "menuSecond": [
+      {
+        "path": "/contact",
+        "text": "CONTACT"
+      },
+      {
+        "path": "/auth",
+        "text": "SIGN/IN"
+      },
+      {
+        "path": "/registration",
+        "text": "REGISTRATION"
+      }
+    ]
+  },
+  "home": "home page",
+  "titleFeature": "feature",
+  "subTitle": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered but the majority alteration in some form",
+  "titleGallery": "gallery",
+  "titleTeam": "team",
+  "titleSkill": "skill",
+  "titlePricing": "pricing",
+  "titleServices": "services",
+  "titleFaq":"faq",
+  "titleContact": "contact"
+}

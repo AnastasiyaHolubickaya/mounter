@@ -1,9 +1,9 @@
 // * Base
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
-// * Data
-import { list } from './Navigation.data';
+import { useTranslation } from 'react-i18next';
 // * Style
+import baseStyles from '../../../styles/base.module.css';
 import styles from './Navigation.module.css';
 //*Components
 import Logo from '../../Logo/Logo';
@@ -18,13 +18,20 @@ type navigationPropsType = {
 };
 
 const Navigation = ({ isMobile }: navigationPropsType) => {
+  const { t } = useTranslation();
+
+  const menuFirst: Array<propsType> = t('list.menuFirst', {
+    returnObjects: true,
+  });
+  const menuSecond: propsType[] = t('list.menuSecond', { returnObjects: true });
+
   return (
     <>
       <ul
         className={cn([!isMobile ? styles.navigationMenu : styles.MenuMobile])}
       >
         <div className={styles.list}>
-          {list[0].map((element, elIndex) => (
+          {menuFirst.map((element, elIndex) => (
             <Item
               key={'list item -' + element + elIndex}
               path={element.path}
@@ -36,7 +43,7 @@ const Navigation = ({ isMobile }: navigationPropsType) => {
           <Logo />
         </li>
         <div className={styles.list}>
-          {list[1].map((element, elIndex) => (
+          {menuSecond.map((element, elIndex) => (
             <Item
               key={'list item -' + element + elIndex}
               path={element.path}
@@ -52,7 +59,10 @@ const Navigation = ({ isMobile }: navigationPropsType) => {
 const Item = ({ path, text }: propsType) => {
   return (
     <li className={styles.item}>
-      <Link to={path} className={styles.link}>
+      <Link
+        to={path}
+        className={cn([baseStyles.adaptive_font_nav, styles.link])}
+      >
         {text}
       </Link>
     </li>
@@ -60,22 +70,3 @@ const Item = ({ path, text }: propsType) => {
 };
 
 export default Navigation;
-
-// const Navigation = () => {
-//   return (
-//     <ul className={styles.navigation}>
-//       {list.map((item, index) => (
-//         <div key={'list wrapper' + index} className={styles.list}>
-//           {item.map((element, elIndex) => (
-//             <Item
-//               key={'list item -' + element + elIndex}
-//               path={element.path}
-//               text={element.text}
-//             />
-//           ))}
-//         </div>
-//       ))}
-//     </ul>
-//   );
-
-// };

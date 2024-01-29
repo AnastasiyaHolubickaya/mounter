@@ -1,4 +1,5 @@
 :root {
+  --max-width: 1200px;
   --c-primary: #444444;
   --c-secondary: #ffffff;
   --c-third: #00bbd5;
@@ -27,6 +28,9 @@ a {
 
 a,
 button {
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease-out 0s;
 }
 
 li {
@@ -35,4 +39,9 @@ li {
 
 img {
   width: 100%;
+}
+
+section {
+  width: 100%;
+  padding-top: 120px;
 }
