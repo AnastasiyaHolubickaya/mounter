@@ -21,10 +21,10 @@
   background-position: center;
 }
 .button_en {
-  background-image: url('/public/flagbritanii.jpg');
+  background-image: url('/flagbritanii.jpg');
 }
 .button_uk {
-  background-image: url('/public/praporukrainy.jpg');
+  background-image: url('/praporukrainy.jpg');
 }
 
 .buttons {
