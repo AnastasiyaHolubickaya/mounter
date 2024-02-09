@@ -42,5 +42,180 @@
   "titlePricing": "pricing",
   "titleServices": "services",
   "titleFaq":"faq",
-  "titleContact": "contact"
+  "titleContact": "contact",
+  "accordeon":[
+    {
+    "title":"Friendly Support",
+    "content": "There are many variations passage suffered but the majority alteration in but some but the majority"
+  },
+  {
+    "title": "Fresh Ideas",
+    "content": "There are many variations passage suffered but the majority alteration in but some but the majority"
+  },
+  {
+    "title": "Page Builder",
+    "content": "There are many variations passage suffered but the majority alteration in but some but the majority"
+  },
+  {
+    "title": "Responsive Design",
+    "content": "There are many variations passage suffered but the majority alteration in but some but the majority"
+  }
+  ],
+  "filter":["all", "branding", "design", "marketing"],
+  "imagesGallery":[
+    {
+      "src":"/public/img/pic1.jpg",
+      "title":"web design",
+      "subTitle": "rain fall",
+      "category": "branding"
+    },
+    {
+      "src":"/public/img/pic2.jpg",
+      "title":"graphic design",
+      "subTitle": "rain fall",
+      "category": "marketing"
+    },
+    {
+      "src":"/public/img/pic3.jpg",
+      "title":"graphic design",
+      "subTitle": "rain fall",
+      "category": "design"
+    },
+    {
+      "src":"/public/img/pic4.jpg",
+      "title":"graphic design",
+      "subTitle": "rain fall",
+      "category": "design"
+    },
+    {
+      "src":"/public/img/pic5.jpg",
+      "title":"graphic design",
+      "subTitle": "rain fall",
+      "category": "marketing"
+    },
+    {
+      "src":"/public/img/pic6.jpg",
+      "title":"graphic design",
+      "subTitle": "rain fall",
+      "category": "branding"
+    }
+  ],
+  "teamGallery":[
+    {
+      "src":"/public/img/imgTeam/1.jpg",
+      "title":"jonatan joe",
+      "subTitle": "graphic designer"
+     
+    },
+    {
+      "src":"/public/img/imgTeam/2.jpg",
+      "title":"jessika parker",
+      "subTitle": "graphic designer"
+     
+    },
+    {
+      "src":"/public/img/imgTeam/3.jpg",
+      "title":"tom hank",
+      "subTitle": "graphic designer"
+     
+    },
+    {
+      "src":"/public/img/imgTeam/2.jpg",
+      "title":"jessika parker",
+      "subTitle": "web designer"
+     
+    },
+    {
+      "src":"/public/img/imgTeam/1.jpg",
+      "title":"jonatan joe",
+      "subTitle": "web designer"
+     
+    },
+    {
+      "src":"/public/img/imgTeam/3.jpg",
+      "title":"tom hank",
+      "subTitle": "web designer"
+     
+    }
+  ],
+  "comments":[
+    {
+      "text":"Professionalism at its Best: The studio impresses with its high-quality execution and a professional approach to every stage of website development. With a wealth of experience in web design, the studio maintains a high standard across all its projects.",
+      "autor":"Maksud red",
+      "position": "graphic designer"
+    },
+    {
+      "text":"Innovative Approach: The studio not only utilizes modern technologies in design but also introduces innovations and creative solutions into each project. They skillfully blend aesthetics and functionality to achieve stunning results.",
+      "autor":"fillip big",
+      "position": "web designer"
+    },
+    {
+      "text":"Interaction and Communication: The studio collaborates effectively with clients at every stage of development. Clear communication, attentive listening to client needs, and consideration of their preferences contribute to creating websites that meet requirements and expectations.",
+      "autor":"alex bell",
+      "position": "graphic designer"
+    }
+  ],
+  "slogan": "A creative agency for creative thinker",
+  "earn": "Mounter earning",
+  "project": "Project done",
+  "footerTitles": ["important links", "instagram feed", "follow us"],
+  "importantLinks": [
+    {
+      "path": "/about",
+      "text": "about us"
+    },
+    {
+      "path": "/",
+      "text": "terms & policy"
+    },
+    {
+      "path": "/",
+      "text": "quick contact"
+    },
+    {
+      "path": "/contact",
+      "text": "contact"
+    }
+   ],
+   "preview":[
+    {
+      "path": "/about",
+      "src": "/public/img/preview/1.jpg",
+      "alt": "preview",
+      "title": "about as"
+    },
+    {
+      "path": "/about",
+      "src": "/public/img/preview/2.jpg",
+      "alt": "preview",
+      "title": "about as"
+    },
+    {
+      "path": "/about",
+      "src": "/public/img/preview/3.jpg",
+      "alt": "preview",
+      "title": "about as"
+    },
+    {
+      "path": "/about",
+      "src": "/public/img/preview/4.jpg",
+      "alt": "preview",
+      "title": "about as"
+    },
+    {
+      "path": "/about",
+      "src": "/public/img/preview/5.jpg",
+      "alt": "preview",
+      "title": "about as"
+    },
+    {
+      "path": "/about",
+      "src": "/public/img/preview/6.jpg",
+      "alt": "preview",
+      "title": "about as"
+    }
+   ],
+   "underground": "Copyright © 2017 Devitems All Right Reserved.",
+   "buttonValue": "learn more"
+  
 }

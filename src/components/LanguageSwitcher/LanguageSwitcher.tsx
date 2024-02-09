@@ -1,14 +1,22 @@
-import { useState, useEffect } from 'react';
-import { LOCALS } from '../../i18n/constants.ts';
+import { useState, useEffect, memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
+//*Const
+import { LOCALS } from '../../i18n/constants.ts';
 //*Styles
 import styles from './LanguageSwitcher.module.css';
 //*Components
 import Wrapper from '../Wrapper/Wrapper.tsx';
-import Button from '../Button/Button.tsx';
 
-const LanguageSwitcher = () => {
+//Types
+type propsType = {
+  isScrollOn: boolean;
+  isMobile: boolean;
+};
+
+const LanguageSwitcher = ({ isScrollOn, isMobile }: propsType) => {
   const { i18n } = useTranslation();
+
   const [selectedLanguage, setSelectedLanguage] = useState(LOCALS.EN);
 
   useEffect(() => {
@@ -36,23 +44,28 @@ const LanguageSwitcher = () => {
   }, [i18n, selectedLanguage]);
 
   return (
-    <div className={styles.switcher_panel}>
+    <div
+      className={cn([
+        styles.switcher_panel,
+        (isScrollOn || isMobile) && styles.fixed,
+      ])}
+    >
       <Wrapper>
         <div className={styles.buttons}>
-          <Button
+          <button
             onClick={() => setSelectedLanguage(LOCALS.EN)}
             disabled={i18n.language === LOCALS.EN}
-            value="en"
-          />
-          <Button
+            className={cn([styles.button, styles.button_en])}
+          ></button>
+          <button
             onClick={() => setSelectedLanguage(LOCALS.UK)}
             disabled={i18n.language === LOCALS.UK}
-            value="uk"
-          />
+            className={cn([styles.button, styles.button_uk])}
+          ></button>
         </div>
       </Wrapper>
     </div>
   );
 };
 
-export default LanguageSwitcher;
+export default memo(LanguageSwitcher);

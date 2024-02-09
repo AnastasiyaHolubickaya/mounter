@@ -1,4 +1,5 @@
-import { SetStateAction } from 'react';
+import { SetStateAction, memo } from 'react';
+//*Styles
 import styled from 'styled-components';
 
 const StyledBurger = styled.button<{ open: boolean }>`
@@ -55,4 +56,4 @@ const Burger = ({ open, setOpen }: propsType) => {
   );
 };
 
-export default Burger;
+export default memo(Burger);

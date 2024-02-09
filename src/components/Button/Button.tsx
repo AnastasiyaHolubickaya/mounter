@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { memo } from 'react';
+//*Styles
 import styles from './Button.module.css';
 
 type propsType = {
@@ -14,4 +15,5 @@ const Button: React.FC<propsType> = ({ value, onClick, disabled }) => {
     </button>
   );
 };
-export default Button;
+
+export default memo(Button);

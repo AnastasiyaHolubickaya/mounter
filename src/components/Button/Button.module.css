@@ -1,11 +1,13 @@
 .button {
   background: var(--c-fourth);
-  color: #ffffff;
-  padding: 10px 33px;
+  max-width: 200px;
+  color: var(--c-secondary);
+  padding: 15px 30px;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
   position: relative;
   z-index: 5;
   overflow: hidden;
@@ -41,6 +43,7 @@
   width: 100%;
   z-index: -1;
 }
+
 .button:hover::before {
   background: var(--c-third);
   opacity: 1;

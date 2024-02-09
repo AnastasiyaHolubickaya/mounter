@@ -1,7 +1,7 @@
-// * Base
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
-import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 // * Style
 import baseStyles from '../../../styles/base.module.css';
 import styles from './Navigation.module.css';
@@ -23,6 +23,7 @@ const Navigation = ({ isMobile }: navigationPropsType) => {
   const menuFirst: Array<propsType> = t('list.menuFirst', {
     returnObjects: true,
   });
+
   const menuSecond: propsType[] = t('list.menuSecond', { returnObjects: true });
 
   return (
@@ -69,4 +70,4 @@ const Item = ({ path, text }: propsType) => {
   );
 };
 
-export default Navigation;
+export default memo(Navigation);

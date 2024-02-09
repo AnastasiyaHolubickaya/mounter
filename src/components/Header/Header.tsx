@@ -1,5 +1,5 @@
-//*Base
-import { memo, useCallback, useEffect, useState } from 'react';
+import { memo, useState } from 'react';
+import cn from 'classnames';
 // * Styles
 import styles from './Header.module.css';
 //*Components
@@ -8,25 +8,20 @@ import Navigation from './Navigation/Navigation';
 import Burger from '../Burger/Burger';
 import Logo from '../Logo/Logo';
 
-const Header = () => {
+type propsType = {
+  isScrollOn: boolean;
+  isMobile: boolean;
+};
+
+const Header = ({ isScrollOn, isMobile }: propsType) => {
   // document.title = 'my title';
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 767);
+
   const [open, setOpen] = useState(false);
 
-  const handleResize = useCallback(() => {
-    setIsMobile(window.innerWidth < 767);
-  }, [setIsMobile]);
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [handleResize]);
-
   return (
-    <header className={styles.header}>
+    <header
+      className={cn([styles.header, (isScrollOn || isMobile) && styles.fixed])}
+    >
       <Wrapper>
         {isMobile && (
           <div className={styles.mobile_navigation}>

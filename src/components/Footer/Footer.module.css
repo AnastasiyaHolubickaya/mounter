@@ -1,3 +1,147 @@
 .wrapper {
-  max-width: 1200px;
+  background: rgba(0, 0, 0, 0) url(/public/bg_footer.jpg) no-repeat fixed 0 0 /
+    cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 30px;
+  }
+}
+.wrapper::before {
+  position: absolute;
+  content: '';
+  background: var(--c-primary);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.items {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #aaaaaa;
+  margin-bottom: 80px;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 30px;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.span {
+  color: var(--c-secondary);
+  margin-right: 15px;
+}
+
+.title {
+  color: var(--c-secondary);
+  font-size: 18px;
+  line-height: 74px;
+  text-transform: uppercase;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.link {
+  color: #dddddd;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.link:hover {
+  color: var(--c-third);
+}
+
+.preview {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(2, 60px);
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.img_link {
+  width: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.img_link::before {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  background-image: url(/public/img/preview/plus_hover.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transform: scale(3);
+  transition: all 0.3s ease 0s;
+}
+
+.img_link:hover::before {
+  opacity: 0.6;
+  transform: scale(1.1);
+}
+
+.img_link,
+.image {
+  vertical-align: top;
+}
+
+.socialIcon {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid var(--c-secondary);
+  border-radius: 5px;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+.icon {
+  color: var(--c-secondary);
+  background: transparent;
+  z-index: 1;
+}
+
+.socialIcon:hover {
+  background-color: var(--c-third);
+  border: 1px solid var(--c-third);
+}
+
+.underground {
+  text-align: center;
+  border-top: 1px solid #aaaaaa;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.info {
+  font-size: 14px;
+  color: var(--c-secondary);
 }

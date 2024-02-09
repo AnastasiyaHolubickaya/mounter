@@ -1,0 +1,114 @@
+.wrapper_banner {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0) url('/public/bg_banner.jpg') no-repeat scroll 0 0 /
+    cover;
+  position: relative;
+  top: 0;
+  overflow: hidden;
+}
+
+.paper {
+  background: rgba(0, 0, 0, 0) url('/public/paper_banner.png') no-repeat center
+    center / cover;
+  width: 100%;
+  max-width: 870px;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(5deg);
+  z-index: 10;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  color: var(--c-fourth);
+  text-transform: uppercase;
+  z-index: 11;
+}
+
+.title {
+  font-size: clamp(25px, 5vw, 75px);
+  font-weight: 700;
+  letter-spacing: 15px;
+}
+
+.scretch {
+  position: absolute;
+  z-index: 10;
+  top: 53%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.pencile {
+  position: absolute;
+  top: 53%;
+  left: 56.5%;
+  z-index: 12;
+}
+
+.pen {
+  position: absolute;
+  z-index: 10;
+  top: 42%;
+  left: 77%;
+  z-index: 13;
+}
+
+.marker {
+  position: absolute;
+  z-index: 10;
+  top: 51%;
+  left: 28%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+}
+
+.knife {
+  position: absolute;
+  z-index: 10;
+  top: 42.5%;
+  left: 20%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+}
+
+.plant {
+  position: absolute;
+  z-index: 10;
+  top: 60%;
+  left: 70%;
+  z-index: 12;
+}
+
+.pencup {
+  position: absolute;
+  z-index: 10;
+  top: 5%;
+  left: 5%;
+  z-index: 12;
+}
+
+.flower1 {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 15%;
+  z-index: 12;
+}
+
+.flower2 {
+  position: absolute;
+  z-index: 10;
+  bottom: 30%;
+  left: 0;
+  z-index: 12;
+}

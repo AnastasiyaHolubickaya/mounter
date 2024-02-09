@@ -1,0 +1,7 @@
+.items {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 70px;
+}

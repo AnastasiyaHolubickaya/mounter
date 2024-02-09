@@ -17,3 +17,13 @@
     );
   }
 }
+
+.icon {
+  font-size: 18px;
+  color: white;
+}
+
+.animated {
+  position: relative;
+  z-index: 10;
+}
