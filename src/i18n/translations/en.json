@@ -64,37 +64,37 @@
   "filter":["all", "branding", "design", "marketing"],
   "imagesGallery":[
     {
-      "src":"/public/img/pic1.jpg",
+      "src":"/img/pic1.jpg",
       "title":"web design",
       "subTitle": "rain fall",
       "category": "branding"
     },
     {
-      "src":"/public/img/pic2.jpg",
+      "src":"/img/pic2.jpg",
       "title":"graphic design",
       "subTitle": "rain fall",
       "category": "marketing"
     },
     {
-      "src":"/public/img/pic3.jpg",
+      "src":"/img/pic3.jpg",
       "title":"graphic design",
       "subTitle": "rain fall",
       "category": "design"
     },
     {
-      "src":"/public/img/pic4.jpg",
+      "src":"/img/pic4.jpg",
       "title":"graphic design",
       "subTitle": "rain fall",
       "category": "design"
     },
     {
-      "src":"/public/img/pic5.jpg",
+      "src":"/img/pic5.jpg",
       "title":"graphic design",
       "subTitle": "rain fall",
       "category": "marketing"
     },
     {
-      "src":"/public/img/pic6.jpg",
+      "src":"/img/pic6.jpg",
       "title":"graphic design",
       "subTitle": "rain fall",
       "category": "branding"
@@ -102,37 +102,37 @@
   ],
   "teamGallery":[
     {
-      "src":"/public/img/imgTeam/1.jpg",
+      "src":"/img/imgTeam/1.jpg",
       "title":"jonatan joe",
       "subTitle": "graphic designer"
      
     },
     {
-      "src":"/public/img/imgTeam/2.jpg",
+      "src":"/img/imgTeam/2.jpg",
       "title":"jessika parker",
       "subTitle": "graphic designer"
      
     },
     {
-      "src":"/public/img/imgTeam/3.jpg",
+      "src":"/img/imgTeam/3.jpg",
       "title":"tom hank",
       "subTitle": "graphic designer"
      
     },
     {
-      "src":"/public/img/imgTeam/2.jpg",
+      "src":"/img/imgTeam/2.jpg",
       "title":"jessika parker",
       "subTitle": "web designer"
      
     },
     {
-      "src":"/public/img/imgTeam/1.jpg",
+      "src":"/img/imgTeam/1.jpg",
       "title":"jonatan joe",
       "subTitle": "web designer"
      
     },
     {
-      "src":"/public/img/imgTeam/3.jpg",
+      "src":"/img/imgTeam/3.jpg",
       "title":"tom hank",
       "subTitle": "web designer"
      
@@ -180,37 +180,37 @@
    "preview":[
     {
       "path": "/about",
-      "src": "/public/img/preview/1.jpg",
+      "src": "/img/preview/1.jpg",
       "alt": "preview",
       "title": "about as"
     },
     {
       "path": "/about",
-      "src": "/public/img/preview/2.jpg",
+      "src": "/img/preview/2.jpg",
       "alt": "preview",
       "title": "about as"
     },
     {
       "path": "/about",
-      "src": "/public/img/preview/3.jpg",
+      "src": "/img/preview/3.jpg",
       "alt": "preview",
       "title": "about as"
     },
     {
       "path": "/about",
-      "src": "/public/img/preview/4.jpg",
+      "src": "/img/preview/4.jpg",
       "alt": "preview",
       "title": "about as"
     },
     {
       "path": "/about",
-      "src": "/public/img/preview/5.jpg",
+      "src": "/img/preview/5.jpg",
       "alt": "preview",
       "title": "about as"
     },
     {
       "path": "/about",
-      "src": "/public/img/preview/6.jpg",
+      "src": "/img/preview/6.jpg",
       "alt": "preview",
       "title": "about as"
     }

@@ -27,55 +27,55 @@ const Banner = () => {
       <div className={styles.animation_images}>
         <div className={styles.pencup}>
           <AnimatedBannerImage
-            src="/public/pencup.png"
+            src="/pencup.png"
             animationName={rotateIn}
           ></AnimatedBannerImage>
         </div>
         <div className={styles.flower1}>
           <AnimatedBannerImage
-            src="/public/flower-1.png"
+            src="/flower-1.png"
             animationName={fadeInRight}
           ></AnimatedBannerImage>
         </div>
         <div className={styles.flower2}>
           <AnimatedBannerImage
-            src="/public/flower-2.png"
+            src="/flower-2.png"
             animationName={fadeInLeft}
           ></AnimatedBannerImage>
         </div>
       </div>
       <div className={styles.paper}>
         <div className={styles.scretch}>
-          <img src="/public/scretch.png" />
+          <img src="/scretch.png" />
         </div>
         <div className={styles.pencile}>
           <AnimatedBannerImage
-            src="/public/pencile.png"
+            src="/pencile.png"
             animationName={flipInY}
           ></AnimatedBannerImage>
         </div>
 
         <div className={styles.pen}>
           <AnimatedBannerImage
-            src="/public/pen-1.png"
+            src="/pen-1.png"
             animationName={bounceInDown}
           ></AnimatedBannerImage>
         </div>
         <div className={styles.marker}>
           <AnimatedBannerImage
-            src="/public/marker.png"
+            src="/marker.png"
             animationName={bounceInUp}
           ></AnimatedBannerImage>
         </div>
         <div className={styles.knife}>
           <AnimatedBannerImage
-            src="/public/knife.png"
+            src="/knife.png"
             animationName={bounceUp}
           ></AnimatedBannerImage>
         </div>
         <div className={styles.plant}>
           <AnimatedBannerImage
-            src="/public/plant.png"
+            src="/plant.png"
             animationName={zoomIn}
           ></AnimatedBannerImage>
         </div>
