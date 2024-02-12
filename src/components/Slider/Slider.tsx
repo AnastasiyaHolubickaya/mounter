@@ -3,8 +3,6 @@ import { useSpring, animated, config } from 'react-spring';
 import cn from 'classnames';
 //*Icons
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
-//*Components
-import Wrapper from '../Wrapper/Wrapper';
 //*Styles
 import styles from './Slider.module.css';
 //*Types
