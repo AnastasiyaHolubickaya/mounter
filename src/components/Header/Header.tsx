@@ -29,8 +29,10 @@ const Header = ({ isScrollOn, isMobile }: propsType) => {
             <Burger open={open} setOpen={setOpen} />
           </div>
         )}
-        {isMobile && open && <Navigation isMobile={isMobile} />}
-        {!isMobile && <Navigation isMobile={isMobile} />}
+        {isMobile && open && (
+          <Navigation isMobile={isMobile} setOpen={setOpen} />
+        )}
+        {!isMobile && <Navigation isMobile={isMobile} setOpen={setOpen} />}
       </Wrapper>
     </header>
   );

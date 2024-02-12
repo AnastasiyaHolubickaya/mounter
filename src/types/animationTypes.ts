@@ -1,6 +1,6 @@
 export enum AnimationName {
-  FlipInY = 'flipInY',
-  BounceInDown = 'bounceInDown',
+  flipInY = 'flipInY',
+  bounceInDown = 'bounceInDown',
   bounceInUp = 'bounceInUp',
   bounceUp = 'bounceUp',
   zoomIn = 'zoomIn',

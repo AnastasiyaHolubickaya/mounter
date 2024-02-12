@@ -1,24 +1,36 @@
-.wrapper_banner {
+.wrapper {
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0) url('/bg_banner.jpg') no-repeat scroll 0 0 /
-    cover;
   position: relative;
   top: 0;
   overflow: hidden;
 }
-
-.paper {
-  background: rgba(0, 0, 0, 0) url('/paper_banner.png') no-repeat center center /
+.bg_basik {
+  background: rgba(0, 0, 0, 0) url('/bg_banner.jpg') no-repeat scroll 0 0 /
     cover;
-  width: 100%;
-  max-width: 870px;
-  height: 100%;
+}
+.bg_default {
+  background: rgba(0, 0, 0, 0) url('/bg_default.jpg') no-repeat scroll 0 0 /
+    cover;
+  height: 60vh;
+}
+
+.animation_images {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+.paper {
+  max-width: 900px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(5deg);
-  z-index: 10;
+  z-index: 11;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 
 .text {
@@ -40,75 +52,134 @@
   font-size: clamp(25px, 5vw, 75px);
   font-weight: 700;
   letter-spacing: 15px;
+
+  @media (max-width: 767px) {
+    color: var(--c-secondary);
+  }
+}
+
+.title_basik {
+  color: var(--c-fourth);
+}
+.title_default {
+  color: var(--c-secondary);
 }
 
 .scretch {
+  width: 100%;
+  max-width: 70px;
   position: absolute;
   z-index: 10;
-  top: 53%;
-  left: 45%;
-  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 35%;
+
+  @media (max-width: 1024px) {
+    max-width: 50px;
+  }
 }
 
 .pencile {
+  width: 100%;
+  max-width: 40px;
   position: absolute;
-  top: 53%;
-  left: 56.5%;
+  top: 54%;
+  right: 40.5%;
   z-index: 12;
+  transform: rotate(5deg);
+
+  @media (max-width: 1024px) {
+    max-width: 30px;
+    top: 58%;
+    right: 38%;
+  }
 }
 
 .pen {
+  width: 100%;
+  max-width: 50px;
   position: absolute;
   z-index: 10;
-  top: 42%;
-  left: 77%;
+  top: 45%;
+  right: 25%;
   z-index: 13;
+  transform: rotate(5deg);
+
+  @media (max-width: 1024px) {
+    max-width: 35px;
+    top: 50%;
+    right: 25%;
+  }
 }
 
 .marker {
+  width: 100%;
+  max-width: 85px;
   position: absolute;
-  z-index: 10;
-  top: 51%;
-  left: 28%;
-  transform: translate(-50%, -50%) rotate(-5deg);
+  z-index: 13;
+  top: 44%;
+  left: 30%;
+
+  @media (max-width: 1024px) {
+    max-width: 65px;
+  }
 }
 
 .knife {
+  width: 100%;
+  max-width: 70px;
   position: absolute;
-  z-index: 10;
-  top: 42.5%;
-  left: 20%;
-  transform: translate(-50%, -50%) rotate(-5deg);
+  z-index: 13;
+  top: 34%;
+  left: 25%;
+
+  @media (max-width: 1024px) {
+    max-width: 60px;
+  }
 }
 
 .plant {
+  width: 100%;
+  max-width: 250px;
   position: absolute;
   z-index: 10;
   top: 60%;
-  left: 70%;
+  right: 20%;
   z-index: 12;
+
+  @media (max-width: 1024px) {
+    max-width: 150px;
+  }
 }
 
 .pencup {
+  width: 100%;
+  max-width: 275px;
   position: absolute;
   z-index: 10;
   top: 5%;
-  left: 5%;
+  left: 10%;
   z-index: 12;
+
+  @media (max-width: 1024px) {
+    max-width: 250px;
+    top: 15%;
+  }
 }
 
 .flower1 {
+  width: 100%;
+  max-width: 300px;
   position: absolute;
-  z-index: 10;
   top: 0;
-  right: 15%;
+  right: 0;
   z-index: 12;
 }
 
 .flower2 {
+  width: 100%;
+  max-width: 200px;
   position: absolute;
-  z-index: 10;
-  bottom: 30%;
+  bottom: 267px;
   left: 0;
   z-index: 12;
 }

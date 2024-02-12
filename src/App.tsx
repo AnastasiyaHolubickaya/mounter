@@ -39,7 +39,6 @@ function App() {
         <div className={styles.content}>
           <Outlet />
         </div>
-        <div className={styles.buttons}></div>
         <Footer />
       </I18nextProvider>
     </>

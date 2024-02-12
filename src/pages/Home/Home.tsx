@@ -2,6 +2,8 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 //*Styles
 //import styles from './Home.module.css';
+//*Data
+import { imageData } from './imageData';
 //*Components
 import Feature from '../../components/Feature/Feature';
 import Gallery from '../../components/Gallery/Gallery';
@@ -24,7 +26,7 @@ const Home = () => {
 
   return (
     <>
-      <Banner />
+      <Banner imageData={imageData} />
       <Feature />
       <Gallery />
       <Team />

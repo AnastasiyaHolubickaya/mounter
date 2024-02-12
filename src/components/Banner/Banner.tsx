@@ -1,4 +1,5 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 //*Styles
@@ -8,84 +9,73 @@ import Button from '../Button/Button';
 import AnimatedBannerSubTitle from '../AnimatedBannerSubTitle/AnimatedBannerSubTitle';
 import AnimatedBannerImage from '../AnimatedBannerImage/AnimatedBannerImage';
 //*Enum
-import { AnimationName } from '../AnimatedBannerImage/animationTypes';
+import { AnimationName } from '../../types/animationTypes';
 
-const flipInY: AnimationName = AnimationName.FlipInY;
-const bounceInDown: AnimationName = AnimationName.BounceInDown;
-const bounceInUp: AnimationName = AnimationName.bounceInUp;
-const bounceUp: AnimationName = AnimationName.bounceUp;
-const zoomIn: AnimationName = AnimationName.zoomIn;
-const rotateIn: AnimationName = AnimationName.rotateIn;
-const fadeInLeft: AnimationName = AnimationName.fadeInLeft;
-const fadeInRight: AnimationName = AnimationName.fadeInRight;
+type dataType = {
+  imageData?: { src: string; animationName: AnimationName; name: string }[];
+};
 
-const Banner = () => {
+const Banner = ({ imageData = [] }: dataType) => {
   const { t } = useTranslation();
 
-  return (
-    <div className={styles.wrapper_banner}>
-      <div className={styles.animation_images}>
-        <div className={styles.pencup}>
-          <AnimatedBannerImage
-            src="/pencup.png"
-            animationName={rotateIn}
-          ></AnimatedBannerImage>
-        </div>
-        <div className={styles.flower1}>
-          <AnimatedBannerImage
-            src="/flower-1.png"
-            animationName={fadeInRight}
-          ></AnimatedBannerImage>
-        </div>
-        <div className={styles.flower2}>
-          <AnimatedBannerImage
-            src="/flower-2.png"
-            animationName={fadeInLeft}
-          ></AnimatedBannerImage>
-        </div>
-      </div>
-      <div className={styles.paper}>
-        <div className={styles.scretch}>
-          <img src="/scretch.png" />
-        </div>
-        <div className={styles.pencile}>
-          <AnimatedBannerImage
-            src="/pencile.png"
-            animationName={flipInY}
-          ></AnimatedBannerImage>
-        </div>
+  const { pathname } = useLocation();
 
-        <div className={styles.pen}>
-          <AnimatedBannerImage
-            src="/pen-1.png"
-            animationName={bounceInDown}
-          ></AnimatedBannerImage>
-        </div>
-        <div className={styles.marker}>
-          <AnimatedBannerImage
-            src="/marker.png"
-            animationName={bounceInUp}
-          ></AnimatedBannerImage>
-        </div>
-        <div className={styles.knife}>
-          <AnimatedBannerImage
-            src="/knife.png"
-            animationName={bounceUp}
-          ></AnimatedBannerImage>
-        </div>
-        <div className={styles.plant}>
-          <AnimatedBannerImage
-            src="/plant.png"
-            animationName={zoomIn}
-          ></AnimatedBannerImage>
-        </div>
-      </div>
+  const getPage = useCallback((pathname: string) => {
+    const pageTitles: Record<string, string> = {
+      '/': 'homeTitle',
+      '/about': 'aboutTitle',
+      '/gallery': 'galleryTitle',
+      '/service': 'serviceTitle',
+      '/contact': 'contactTitle',
+      '/auth': 'authTitle',
+    };
+
+    return pageTitles[pathname] || '';
+  }, []);
+
+  return (
+    <div
+      className={cn([
+        styles.wrapper,
+        pathname === '/' ? styles.bg_basik : styles.bg_default,
+      ])}
+    >
+      {imageData.length > 0 && (
+        <>
+          <div className={styles.animation_images}>
+            {imageData.map((item, itemId) => (
+              <div key={`${item.name}-${itemId}`} className={styles[item.name]}>
+                <AnimatedBannerImage
+                  src={item.src}
+                  animationName={item.animationName}
+                ></AnimatedBannerImage>
+              </div>
+            ))}
+          </div>
+          <div className={styles.paper}>
+            <img className={styles.paper_img} src="/paper_banner.png" />
+            <div className={styles.scretch}>
+              <img src="/scretch.png" />
+            </div>
+          </div>
+        </>
+      )}
+
       <div className={styles.text}>
-        <h1 className={cn([styles.title, styles.adaptive_font_title])}>
-          mounter
+        <h1
+          className={cn([
+            pathname === '/' ? styles.title_basik : styles.title_default,
+            styles.title,
+          ])}
+        >
+          {t(getPage(pathname))}
         </h1>
-        <AnimatedBannerSubTitle />
-        <Button value={t('buttonValue')} />
+        {pathname === '/' && (
+          <>
+            <AnimatedBannerSubTitle />
+            <Button value={t('buttonValue')} />
+          </>
+        )}
       </div>
     </div>
   );

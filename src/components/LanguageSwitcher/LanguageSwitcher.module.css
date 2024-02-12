@@ -10,8 +10,7 @@
 
 .fixed {
   position: fixed;
-  background-color: var(--c-primary);
-  top: 67px;
+  background: transparent;
 }
 
 .button {

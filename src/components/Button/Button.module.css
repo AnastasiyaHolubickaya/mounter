@@ -9,25 +9,25 @@
   align-items: center;
   flex-wrap: nowrap;
   position: relative;
-  z-index: 5;
+  z-index: 15;
   overflow: hidden;
 
   @media screen and (max-width: 767px) {
     font-size: 8px;
-    padding: 5px 11px;
+    padding: 10px 15px;
+    background: var(--c-third);
   }
 }
 
 .text {
   font-size: 14px;
+  @media screen and (max-width: 767px) {
+    font-size: 8px;
+  }
 }
 
 .btn:focus {
   outline: none;
-}
-
-.button:disabled {
-  background: #9f8b8b;
 }
 
 .button::before {
@@ -49,4 +49,8 @@
   opacity: 1;
   transform: rotate3d(0, 0, 1, 0deg);
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+
+  @media screen and (max-width: 767px) {
+    background: var(--c-fourth);
+  }
 }

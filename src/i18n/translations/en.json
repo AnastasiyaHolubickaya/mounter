@@ -20,8 +20,8 @@
     ],
     "menuSecond": [
       {
-        "path": "/contact",
-        "text": "CONTACT"
+        "path": "#",
+        "text": "PAGES"
       },
       {
         "path": "/auth",
@@ -31,6 +31,20 @@
         "path": "/registration",
         "text": "REGISTRATION"
       }
+    ],
+    "subMenu":[
+      {
+        "path": "/service",
+        "text": "SERVICE"
+      },
+      {
+        "path": "/blog",
+        "text": "BLOG"
+      },
+      {
+        "path": "/contact",
+        "text": "CONTACT"
+      } 
     ]
   },
   "home": "home page",
@@ -216,6 +230,13 @@
     }
    ],
    "underground": "Copyright © 2017 Devitems All Right Reserved.",
-   "buttonValue": "learn more"
+   "buttonValue": "learn more",
+   "homeTitle": "mounter",
+   "aboutTitle": "about as",
+   "galleryTitle": "gallery",
+   "serviceTitle": "service",
+   "contactTitle": "contact",
+   "authTitle": "sign in"
+   
   
 }

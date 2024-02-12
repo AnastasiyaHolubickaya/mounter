@@ -12,11 +12,23 @@ const fadeOutIn = keyframes`
     transform: translateY(0);
   }
 `;
-const SubTitle = styled.div`
-  font-size: clamp(19px, 5vw, 25px);
+const SubTitle = styled.h2`
+  width: 90%;
+  font-size: 20px;
+  line-height: 1.5;
   font-weight: 600;
   text-align: center;
+  position: relative;
+  z-index: 9;
   animation: ${fadeOutIn} 5s ease-in-out infinite;
+
+  @media (max-width: 1024px) {
+    width: 70%;
+    font-size: 16px;
+  }
+  @media (max-width: 767px) {
+    color: var(--c-secondary);
+  }
 `;
 
 const AnimatedBannerSubTitle = () => {

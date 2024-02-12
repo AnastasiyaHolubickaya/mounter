@@ -31,6 +31,20 @@
         "path": "/registration",
         "text": "РЕЄСТРАЦІЯ"
       }
+    ],
+    "subMenu":[
+       {
+        "path": "/service",
+        "text": "УСЛУГИ"
+      },
+      {
+        "path": "/blog",
+        "text": "БЛОГ"
+      },
+      {
+        "path": "/contact",
+        "text": "КОНТАКТИ"
+      }
     ]
   },
   "home": "домашня сторинка",
@@ -217,6 +231,12 @@
     }
    ],
    "underground": "Авторське право © 2017 Усі права захищено.",
-   "buttonValue": "дізнатися більше"
+   "buttonValue": "дізнатися більше",
+   "homeTitle": "mounter",
+   "aboutTitle": "про нас",
+   "galleryTitle": "галерея",
+   "serviceTitle": "послуги",
+   "contactTitle": "контакти",
+   "authTitle": "вхід"
   
 }

@@ -3,6 +3,8 @@ import { Formik, FormikErrors, FormikHelpers } from 'formik';
 //*Styles
 import styles from './Auth.module.css';
 import axios from 'axios';
+import Wrapper from '../../components/Wrapper/Wrapper';
+import Banner from '../../components/Banner/Banner';
 //* Types
 type FormValuesType = {
   email: string;
@@ -61,59 +63,64 @@ const Auth = () => {
   };
 
   return (
-    <div>
-      <h1 className={styles.wrapper}>Form Auth page</h1>
-      <Formik
-        initialValues={initialValues}
-        validate={validation}
-        onSubmit={onSubmit}
-      >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          isSubmitting,
-        }) => (
-          <form onSubmit={handleSubmit} className={styles.form}>
-            <label htmlFor="email">
-              Email
-              <input
-                id="email"
-                name="email"
-                placeholder="john@acme.com"
-                type="email"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.email}
-              />
-              {touched.email && errors.email && <div>{errors.email}</div>}
-            </label>
+    <>
+      <Banner />
+      <Wrapper>
+        <div className={styles.wrapper}>
+          <h1>Form Auth page</h1>
+          <Formik
+            initialValues={initialValues}
+            validate={validation}
+            onSubmit={onSubmit}
+          >
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+            }) => (
+              <form onSubmit={handleSubmit} className={styles.form}>
+                <label htmlFor="email">
+                  Email
+                  <input
+                    id="email"
+                    name="email"
+                    placeholder="john@acme.com"
+                    type="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                  />
+                  {touched.email && errors.email && <div>{errors.email}</div>}
+                </label>
 
-            <label htmlFor="password">
-              Password
-              <input
-                id="password"
-                name="password"
-                type="password"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.password}
-              />
-              {touched.password && errors.password && (
-                <div>{errors.password}</div>
-              )}
-            </label>
+                <label htmlFor="password">
+                  Password
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.password}
+                  />
+                  {touched.password && errors.password && (
+                    <div>{errors.password}</div>
+                  )}
+                </label>
 
-            <button type="submit" disabled={isSubmitting}>
-              <span>Submit</span>
-            </button>
-          </form>
-        )}
-      </Formik>
-    </div>
+                <button type="submit" disabled={isSubmitting}>
+                  <span>Submit</span>
+                </button>
+              </form>
+            )}
+          </Formik>
+        </div>
+      </Wrapper>
+    </>
   );
 };
 

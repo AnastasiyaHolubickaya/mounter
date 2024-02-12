@@ -1,21 +1,19 @@
-.navigationMenu {
+.menu {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1140px;
-  width: 100%;
-  margin: 0 auto;
   transition: all 0.3s ease-out 0s;
 }
 
-.MenuMobile {
+.menu_mobile {
+  margin-top: 50px;
+  background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
   flex-direction: column;
   justify-content: flex-start;
-  margin: 0;
-  background: var(--c-primary);
-  margin-top: 50px;
   transition: all 0.3s ease-out 0s;
-  overflow: hidden;
 }
 
 .link {
@@ -31,33 +29,8 @@
   @media screen and (max-width: 950px) {
     padding-inline: 10px;
   }
-}
 
-.list {
-  display: flex;
-  gap: 50px;
-
-  @media screen and (max-width: 1071px) {
-    gap: 20px;
-  }
-
-  @media screen and (max-width: 950px) {
-    gap: 5px;
-  }
-}
-
-.hidden {
-  display: none;
-}
-
-@media screen and (max-width: 767px) {
-  .list {
-    flex-direction: column;
-    width: 100%;
-    gap: 0;
-  }
-
-  .link {
+  @media screen and (max-width: 767px) {
     padding: 1em 5%;
     display: block;
     width: 100%;
@@ -68,7 +41,68 @@
       color: var(--c-secondary);
     }
   }
+}
 
+.item {
+  position: relative;
+}
+
+.sub_menu {
+  width: 230px;
+  height: 0;
+  background: #ffffff none repeat scroll 0 0;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  padding: 12px 0;
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.12), 7px 0 12px rgba(0, 0, 0, 0.12);
+}
+
+.sub_menu.show {
+  opacity: 1;
+  height: auto;
+}
+
+.sub_menu_mob {
+  position: relative;
+  background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+}
+
+.sub_menu .link {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.sub_menu .link:hover {
+  color: var(--c-third);
+}
+.sub_menu_mob .link {
+  color: var(--c-secondary);
+}
+
+.list {
+  position: relative;
+  height: auto;
+  display: flex;
+  gap: 50px;
+
+  @media screen and (max-width: 1071px) {
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 950px) {
+    gap: 5px;
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .logo {
     display: none;
   }

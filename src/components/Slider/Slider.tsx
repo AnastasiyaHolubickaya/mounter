@@ -34,7 +34,7 @@ const Slider = ({ comments }: commentsPropsType) => {
   return (
     <div className={styles.slider}>
       <AnimatedComponent>
-        <Wrapper>
+        <div className={styles.wrapper}>
           <animated.div
             style={{
               display: 'flex',
@@ -65,7 +65,7 @@ const Slider = ({ comments }: commentsPropsType) => {
           >
             <FaArrowRightLong />
           </button>
-        </Wrapper>
+        </div>
       </AnimatedComponent>
     </div>
   );

@@ -10,7 +10,7 @@ import {
   fadeInLeft,
   fadeInRight,
 } from './animations';
-import { AnimationName } from './animationTypes';
+import { AnimationName } from '../../types/animationTypes';
 
 type propsType = {
   src: string;
@@ -20,10 +20,10 @@ type propsType = {
 const Image = styled.img<{ animationName: AnimationName }>`
   position: absolute;
   animation-duration: ${({ animationName }) =>
-    animationName === AnimationName.FlipInY ||
+    animationName === AnimationName.flipInY ||
     animationName === AnimationName.bounceInUp
       ? '8s'
-      : animationName === AnimationName.BounceInDown
+      : animationName === AnimationName.bounceInDown
       ? '6s'
       : animationName === AnimationName.bounceUp
       ? '7s'
@@ -39,9 +39,9 @@ const Image = styled.img<{ animationName: AnimationName }>`
   animation-delay: 0.8s;
   animation-fill-mode: both;
   animation-name: ${({ animationName }) =>
-    animationName === AnimationName.FlipInY
+    animationName === AnimationName.flipInY
       ? flipInY
-      : animationName === AnimationName.BounceInDown
+      : animationName === AnimationName.bounceInDown
       ? bounceInDown
       : animationName === AnimationName.bounceInUp
       ? bounceInUp
@@ -59,7 +59,7 @@ const Image = styled.img<{ animationName: AnimationName }>`
 `;
 
 const AnimatedBannerImage = ({ src, animationName }: propsType) => {
-  return <Image src={src} animationName={animationName}></Image>;
+  return <Image src={src} animationName={animationName} alt="picture"></Image>;
 };
 
 export default memo(AnimatedBannerImage);

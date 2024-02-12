@@ -40,4 +40,12 @@ li {
 section {
   width: 100%;
   padding-top: 120px;
+
+  @media (max-width: 1024px) {
+    padding-top: 50px;
+  }
+}
+
+img {
+  width: 100%;
 }
