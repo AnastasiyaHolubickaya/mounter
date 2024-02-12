@@ -64,8 +64,8 @@ const Banner = ({ imageData = [] }: dataType) => {
       <div className={styles.text}>
         <h1
           className={cn([
-            pathname === '/' ? styles.title_basik : styles.title_default,
             styles.title,
+            pathname === '/' ? styles.title_basik : styles.title_default,
           ])}
         >
           {t(getPage(pathname))}

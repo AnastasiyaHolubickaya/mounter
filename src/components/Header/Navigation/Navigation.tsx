@@ -1,4 +1,4 @@
-import { SetStateAction, memo, useState } from 'react';
+import { SetStateAction, memo, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
@@ -40,11 +40,15 @@ const Navigation = ({ isMobile, setOpen }: NavigationPropsType) => {
 
   const subMenu: DataPropsType[] = t('list.subMenu', { returnObjects: true });
 
+  const closeSubMenu = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <ul
         className={cn([!isMobile ? styles.menu : styles.menu_mobile])}
-        onClick={() => setOpen((prev) => !prev)}
+        onClick={closeSubMenu}
       >
         <div className={styles.list}>
           {menuFirst.map((element, elIndex) => (
@@ -92,6 +96,12 @@ const Item = ({ path, text, subMenu, isMobile }: ItemPropsType) => {
     setIsSubMenuOpen(false);
   };
 
+  const handleClick = () => {
+    if (isMobile && path === '#') {
+      setIsSubMenuOpen(!isSubMenuOpen);
+    }
+  };
+
   return (
     <li
       className={styles.item}
@@ -101,6 +111,7 @@ const Item = ({ path, text, subMenu, isMobile }: ItemPropsType) => {
       <Link
         to={path}
         className={cn([baseStyles.adaptive_font_nav, styles.link])}
+        onClick={handleClick}
       >
         {text}
       </Link>
