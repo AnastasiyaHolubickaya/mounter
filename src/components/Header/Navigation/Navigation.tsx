@@ -1,4 +1,4 @@
-import { SetStateAction, memo, useEffect, useState } from 'react';
+import { SetStateAction, memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
