@@ -43,8 +43,19 @@
   }
 }
 
+.link:hover ~ .icon {
+  color: var(--c-third);
+}
+
 .item {
   position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--c-secondary);
 }
 
 .sub_menu {
@@ -53,6 +64,7 @@
   background: #ffffff none repeat scroll 0 0;
   position: absolute;
   left: 0;
+  top: 100%;
   opacity: 0;
   padding: 12px 0;
   box-shadow: 0 7px 12px rgba(0, 0, 0, 0.12), 7px 0 12px rgba(0, 0, 0, 0.12);

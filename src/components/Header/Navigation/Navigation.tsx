@@ -8,6 +8,7 @@ import styles from './Navigation.module.css';
 //*Components
 import Logo from '../../Logo/Logo';
 import { animated, useSpring } from 'react-spring';
+import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 
 type DataPropsType = {
   path: string;
@@ -103,8 +104,15 @@ const Item = ({ path, text, subMenu, isMobile }: ItemPropsType) => {
       >
         {text}
       </Link>
+      {path === '#' ? (
+        isSubMenuOpen ? (
+          <FaMinusCircle className={styles.icon} />
+        ) : (
+          <FaPlusCircle className={styles.icon} />
+        )
+      ) : null}
 
-      {text === 'PAGES' && subMenu && isSubMenuOpen && (
+      {path === '#' && subMenu && isSubMenuOpen && (
         <animated.ul
           className={cn([
             styles.sub_menu,

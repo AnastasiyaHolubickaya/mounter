@@ -20,8 +20,8 @@
     ],
     "menuSecond": [
       {
-        "path": "/contact",
-        "text": "КОНТАКТИ"
+        "path": "#",
+        "text": "СТОРІНКИ"
       },
       {
         "path": "/auth",
