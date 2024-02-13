@@ -1,13 +1,11 @@
-import React from 'react';
-import styles from './About.module.css';
+//import styles from './About.module.css';
+//*Components
+import Banner from '../../components/Banner/Banner';
 
-interface IComponentProps {}
-  
-
-const About:React.FC<IComponentProps> = () => {
+const About = () => {
   return (
     <>
-      <h1 className={styles.wrapper}>About page </h1>
+      <Banner />
     </>
   );
 };

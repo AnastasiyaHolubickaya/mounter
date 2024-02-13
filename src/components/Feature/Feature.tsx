@@ -5,9 +5,9 @@ import Title from '../Title/Title';
 import Wrapper from '../Wrapper/Wrapper';
 import Accordeon from '../Accordeon/Accordeon';
 import Picture from '../Picture/Picture';
+import AnimatedComponent from '../AnimatedComponent/AnimatedComponent';
 // * Styles
 import styles from './Feature.module.css';
-import AnimatedComponent from '../AnimatedComponent/AnimatedComponent';
 
 export type itemsPropsType = {
   title: string;

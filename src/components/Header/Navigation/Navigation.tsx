@@ -1,13 +1,14 @@
 import { SetStateAction, memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { animated, useSpring } from 'react-spring';
 import cn from 'classnames';
 // * Style
 import baseStyles from '../../../styles/base.module.css';
 import styles from './Navigation.module.css';
 //*Components
 import Logo from '../../Logo/Logo';
-import { animated, useSpring } from 'react-spring';
+//*Icons
 import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 
 type DataPropsType = {
@@ -40,7 +41,7 @@ const Navigation = ({ isMobile, setOpen }: NavigationPropsType) => {
 
   const subMenu: DataPropsType[] = t('list.subMenu', { returnObjects: true });
 
-  const closeSubMenu = () => {
+  const handleOnClick = () => {
     setOpen(false);
   };
 
@@ -48,7 +49,7 @@ const Navigation = ({ isMobile, setOpen }: NavigationPropsType) => {
     <>
       <ul
         className={cn([!isMobile ? styles.menu : styles.menu_mobile])}
-        onClick={closeSubMenu}
+        onClick={handleOnClick}
       >
         <div className={styles.list}>
           {menuFirst.map((element, elIndex) => (
@@ -78,7 +79,7 @@ const Navigation = ({ isMobile, setOpen }: NavigationPropsType) => {
   );
 };
 
-const Item = ({ path, text, subMenu, isMobile }: ItemPropsType) => {
+const Item = memo(({ path, text, subMenu, isMobile }: ItemPropsType) => {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   const springProps = useSpring({
@@ -96,8 +97,9 @@ const Item = ({ path, text, subMenu, isMobile }: ItemPropsType) => {
     setIsSubMenuOpen(false);
   };
 
-  const handleClick = () => {
-    if (isMobile && path === '#') {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (path === '#') {
+      e.stopPropagation();
       setIsSubMenuOpen(!isSubMenuOpen);
     }
   };
@@ -111,7 +113,7 @@ const Item = ({ path, text, subMenu, isMobile }: ItemPropsType) => {
       <Link
         to={path}
         className={cn([baseStyles.adaptive_font_nav, styles.link])}
-        onClick={handleClick}
+        onClick={(e) => handleClick(e)}
       >
         {text}
       </Link>
@@ -143,6 +145,6 @@ const Item = ({ path, text, subMenu, isMobile }: ItemPropsType) => {
       )}
     </li>
   );
-};
+});
 
 export default memo(Navigation);

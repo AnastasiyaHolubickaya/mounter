@@ -1,17 +1,12 @@
-import React from 'react';
-import styles from './Gallery.module.css'
+//import styles from './Gallery.module.css'
+import Banner from '../../components/Banner/Banner';
 
-interface IComponentProps {}
-
-const Gallery:React.FC<IComponentProps> = () => {
- 
-
+const Gallery = () => {
   return (
     <>
-    <h1 className={styles.wrapper}>Gallery page</h1>
-     
+      <Banner />
     </>
-  )
-}
+  );
+};
 
 export default Gallery;

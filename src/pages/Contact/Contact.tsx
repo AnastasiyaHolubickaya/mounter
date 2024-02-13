@@ -1,16 +1,12 @@
-import styles from './Contact.module.css'
+import Banner from '../../components/Banner/Banner';
+//import styles from './Contact.module.css'
 
-interface IComponentProps {}
-
-const Contact:React.FC<IComponentProps> = () => {
- 
-
+const Contact = () => {
   return (
     <>
-    <h1 className={styles.wrapper}>Contact  page</h1>
-     
+      <Banner />
     </>
-  )
-}
+  );
+};
 
 export default Contact;

@@ -1,13 +1,14 @@
 import { memo, useState } from 'react';
 import { useSpring, animated, config } from 'react-spring';
 import cn from 'classnames';
-//*Icons
-import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 //*Styles
 import styles from './Slider.module.css';
+//*Components
+import AnimatedComponent from '../AnimatedComponent/AnimatedComponent';
+//*Icons
+import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 //*Types
 import { itemPropsType } from '../../pages/Home/Home';
-import AnimatedComponent from '../AnimatedComponent/AnimatedComponent';
 
 export type commentsPropsType = {
   comments: itemPropsType[];
