@@ -8,6 +8,7 @@ import styles from './App.module.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import LanguageSwitcher from './components/LanguageSwitcher/LanguageSwitcher';
+import ButtonUp from './components/ButtonUp/ButtonUp';
 
 function App() {
   const [isScrollOn, setisScrollOn] = useState(false);
@@ -40,6 +41,7 @@ function App() {
           <Outlet />
         </div>
         <Footer />
+        <ButtonUp />
       </I18nextProvider>
     </>
   );

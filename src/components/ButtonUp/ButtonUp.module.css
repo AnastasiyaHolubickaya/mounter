@@ -1,0 +1,13 @@
+.button {
+  position: fixed;
+  z-index: 999;
+  bottom: 20px;
+  right: 20px;
+  background: var(--c-third);
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
