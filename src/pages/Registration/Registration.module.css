@@ -1,5 +1,17 @@
-.form {
+.wrapper {
   display: flex;
-  gap: 30px;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  gap: 30px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.title {
+  position: relative;
+  font-size: 18px;
+  color: #555555;
+  text-transform: uppercase;
+  padding-bottom: 15px;
 }

@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useContext, useState } from 'react';
 import cn from 'classnames';
 // * Styles
 import styles from './Header.module.css';
@@ -7,15 +7,10 @@ import Wrapper from '../Wrapper/Wrapper';
 import Navigation from './Navigation/Navigation';
 import Burger from '../Burger/Burger';
 import Logo from '../Logo/Logo';
+import AuthContext from '../../authContext';
 
-type propsType = {
-  isScrollOn: boolean;
-  isMobile: boolean;
-};
-
-const Header = ({ isScrollOn, isMobile }: propsType) => {
-  // document.title = 'my title';
-
+const Header = () => {
+  const { isScrollOn, isMobile } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
 
   return (
@@ -29,10 +24,8 @@ const Header = ({ isScrollOn, isMobile }: propsType) => {
             <Burger open={open} setOpen={setOpen} />
           </div>
         )}
-        {isMobile && open && (
-          <Navigation isMobile={isMobile} setOpen={setOpen} />
-        )}
-        {!isMobile && <Navigation isMobile={isMobile} setOpen={setOpen} />}
+        {isMobile && open && <Navigation setOpen={setOpen} />}
+        {!isMobile && <Navigation setOpen={setOpen} />}
       </Wrapper>
     </header>
   );

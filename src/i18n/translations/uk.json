@@ -26,6 +26,7 @@
       {
         "path": "/auth",
         "text": "УВІЙТИ"
+       
       },
       {
         "path": "/registration",
@@ -237,6 +238,27 @@
    "galleryTitle": "галерея",
    "serviceTitle": "послуги",
    "contactTitle": "контакти",
-   "authTitle": "вхід"
+   "authTitle": "вхід",
+   "RegTitle": "реєстрація",
+   "autorisation": "форма авторізації",
+   "registration": "форма реєстрації",
+   "buttonValueSubmit": "відправити",
+   "labelEmail":"Емаіл",
+   "labelPassword": "Пароль",
+   "labelLastName": "Прізвище",
+   "labelFirsName": "Ім'я",
+   "labelPhone": "Телефон",
+   "serverError": "Помилка сервера",
+   "authorizationSuccess": "Авторізація успішна!",
+   "registrationSuccess": "Реєстрація успішна!",
+   "emailRequared": "Поле Емаіл обов'язкове для заповнення",
+   "emailInvalid": "Невалідний Емаіл",
+   "passRequared": "Поле Пароль обов'язкове для заповнення",
+   "passInvalid": "Поле Пароль повинно містити 8, або більше символів",
+   "phoneRequared": "Поле Телефон обов'язкове для заповнення",
+   "lNameRequared": "Поле Прізвище обов'язкове для заповнення",
+   "fNameRequared": "Поле Ім'я обов'язкове для заповнення",
+   "PassNotConverge": "Невірний пароль",
+   "badRequest": "Неверный запрос. Пожалуйста, проверьте введенные данные."
   
 }

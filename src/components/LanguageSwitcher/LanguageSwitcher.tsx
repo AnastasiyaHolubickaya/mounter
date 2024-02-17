@@ -1,4 +1,4 @@
-import { useState, useEffect, memo } from 'react';
+import { useState, useEffect, memo, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 //*Const
@@ -7,14 +7,11 @@ import { LOCALS } from '../../i18n/constants.ts';
 import styles from './LanguageSwitcher.module.css';
 //*Components
 import Wrapper from '../Wrapper/Wrapper.tsx';
+import AuthContext from '../../authContext.ts';
 
-//Types
-type propsType = {
-  isScrollOn: boolean;
-  isMobile: boolean;
-};
+const LanguageSwitcher = () => {
+  const { isScrollOn, isMobile } = useContext(AuthContext);
 
-const LanguageSwitcher = ({ isScrollOn, isMobile }: propsType) => {
   const { i18n } = useTranslation();
 
   const [selectedLanguage, setSelectedLanguage] = useState(LOCALS.EN);

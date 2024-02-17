@@ -28,6 +28,7 @@ const Banner = ({ imageData = [] }: dataType) => {
       '/service': 'serviceTitle',
       '/contact': 'contactTitle',
       '/auth': 'authTitle',
+      '/registration': 'RegTitle'
     };
 
     return pageTitles[pathname] || '';
@@ -73,7 +74,7 @@ const Banner = ({ imageData = [] }: dataType) => {
         {pathname === '/' && (
           <>
             <AnimatedBannerSubTitle />
-            <Button value={t('buttonValue')} />
+            <Button type="button" value={t('buttonValue')} />
           </>
         )}
       </div>

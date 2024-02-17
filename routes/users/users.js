@@ -2,6 +2,7 @@
 import { Router } from 'express';
 import { User, addUser, comparePass } from '../../models/user.js';
 import config from '../../config/bd.js';
+import { useTranslation } from 'react-i18next';
 
 const router = Router();
 
@@ -107,18 +108,14 @@ router.post('/auth', async (request, response) => {
         });
       } else {
         return response.status(400).json({
-          message: 'Passwords do not converge!',
+          messagePass: 'Passwords do not converge',
         });
       }
     });
   } catch (error) {
     response.status(500).json({
       success: false,
-      message: {
-        ua: 'Виникли деякі проблеми',
-        ru: 'Возникли некоторые проблемы',
-        en: 'There were some problems',
-      },
+      message: 'Server Error',
       error: error,
     });
   }

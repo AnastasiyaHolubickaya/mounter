@@ -1,4 +1,4 @@
-import { SetStateAction, memo, useState } from 'react';
+import { SetStateAction, memo, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { animated, useSpring } from 'react-spring';
@@ -9,7 +9,9 @@ import styles from './Navigation.module.css';
 //*Components
 import Logo from '../../Logo/Logo';
 //*Icons
-import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
+import { FaMinus, FaPlus } from 'react-icons/fa';
+import { FaHouseCircleExclamation } from 'react-icons/fa6';
+import AuthContext from '../../../authContext';
 
 type DataPropsType = {
   path: string;
@@ -21,14 +23,15 @@ type ItemPropsType = {
   text: string;
   subMenu?: DataPropsType[];
   isMobile?: boolean;
+  isAuthenticated?: boolean;
 };
 
 type NavigationPropsType = {
-  isMobile: boolean;
   setOpen: React.Dispatch<SetStateAction<boolean>>;
 };
 
-const Navigation = ({ isMobile, setOpen }: NavigationPropsType) => {
+const Navigation = ({ setOpen }: NavigationPropsType) => {
+  const { isMobile, isAuthenticated } = useContext(AuthContext);
   const { t } = useTranslation();
 
   const menuFirst: Array<DataPropsType> = t('list.menuFirst', {
@@ -71,6 +74,7 @@ const Navigation = ({ isMobile, setOpen }: NavigationPropsType) => {
               text={element.text}
               subMenu={subMenu}
               isMobile={isMobile}
+              isAuthenticated={isAuthenticated}
             />
           ))}
         </div>
@@ -79,72 +83,82 @@ const Navigation = ({ isMobile, setOpen }: NavigationPropsType) => {
   );
 };
 
-const Item = memo(({ path, text, subMenu, isMobile }: ItemPropsType) => {
-  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+const Item = memo(
+  ({ path, text, subMenu, isMobile, isAuthenticated }: ItemPropsType) => {
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
-  const springProps = useSpring({
-    opacity: isSubMenuOpen ? 1 : 0,
-    height: isSubMenuOpen ? 'auto' : 0,
-    transform: `scale(${isSubMenuOpen ? 1 : 0.8})`,
-    config: { tension: 600, friction: 60 },
-  });
+    const springProps = useSpring({
+      opacity: isSubMenuOpen ? 1 : 0,
+      height: isSubMenuOpen ? 'auto' : 0,
+      transform: `scale(${isSubMenuOpen ? 1 : 0.8})`,
+      config: { tension: 600, friction: 60 },
+    });
 
-  const handleMouseEnter = () => {
-    setIsSubMenuOpen(true);
-  };
+    const handleMouseEnter = () => {
+      setIsSubMenuOpen(true);
+    };
 
-  const handleMouseLeave = () => {
-    setIsSubMenuOpen(false);
-  };
+    const handleMouseLeave = () => {
+      setIsSubMenuOpen(false);
+    };
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (path === '#') {
-      e.stopPropagation();
-      setIsSubMenuOpen(!isSubMenuOpen);
-    }
-  };
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (path === '#') {
+        e.stopPropagation();
+        setIsSubMenuOpen(!isSubMenuOpen);
+      }
+    };
 
-  return (
-    <li
-      className={styles.item}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <Link
-        to={path}
-        className={cn([baseStyles.adaptive_font_nav, styles.link])}
-        onClick={(e) => handleClick(e)}
+    return (
+      <li
+        className={styles.item}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
-        {text}
-      </Link>
-      {path === '#' ? (
-        isSubMenuOpen ? (
-          <FaMinusCircle className={styles.icon} />
-        ) : (
-          <FaPlusCircle className={styles.icon} />
-        )
-      ) : null}
-
-      {path === '#' && subMenu && isSubMenuOpen && (
-        <animated.ul
-          className={cn([
-            styles.sub_menu,
-            isMobile && styles.sub_menu_mob,
-            styles.show,
-          ])}
-          style={{ ...springProps }}
+        <Link
+          to={path}
+          className={cn([baseStyles.adaptive_font_nav, styles.link])}
+          onClick={(e) => handleClick(e)}
         >
-          {subMenu.map((item, index) => (
-            <li key={`list-item-${item.text}-${index}`}>
-              <Link to={item.path} className={styles.link}>
-                {item.text}
-              </Link>
-            </li>
-          ))}
-        </animated.ul>
-      )}
-    </li>
-  );
-});
+          {path === '/auth' ? (
+            isAuthenticated ? (
+              <FaHouseCircleExclamation />
+            ) : (
+              text
+            )
+          ) : (
+            text
+          )}
+        </Link>
+        {path === '#' ? (
+          isSubMenuOpen ? (
+            <FaMinus className={styles.icon} />
+          ) : (
+            <FaPlus className={styles.icon} />
+          )
+        ) : null}
+
+        {path === '#' && subMenu && isSubMenuOpen && (
+          <animated.ul
+            className={cn([
+              styles.sub_menu,
+              isMobile && styles.sub_menu_mob,
+              styles.show,
+            ])}
+            style={{ ...springProps }}
+          >
+            {subMenu.map((item, index) => (
+              <li key={`list-item-${item.text}-${index}`}>
+                <Link to={item.path} className={styles.link}>
+                  {item.text}
+                </Link>
+              </li>
+            ))}
+          </animated.ul>
+        )}
+      </li>
+    );
+  }
+);
 
 export default memo(Navigation);

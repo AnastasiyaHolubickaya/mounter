@@ -9,11 +9,14 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import LanguageSwitcher from './components/LanguageSwitcher/LanguageSwitcher';
 import ButtonUp from './components/ButtonUp/ButtonUp';
+import AuthContext from './authContext';
 
 function App() {
   const [isScrollOn, setisScrollOn] = useState(false);
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 767);
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleScroll = useCallback(() => {
     setisScrollOn(window.scrollY > 100);
@@ -32,16 +35,25 @@ function App() {
     };
   }, [handleScroll, handleResize]);
 
+  const authContextValue = {
+    isAuthenticated,
+    setIsAuthenticated,
+    isScrollOn,
+    isMobile,
+  };
+
   return (
     <>
       <I18nextProvider i18n={i18n}>
-        <Header isScrollOn={isScrollOn} isMobile={isMobile} />
-        <LanguageSwitcher isScrollOn={isScrollOn} isMobile={isMobile} />
-        <div className={styles.content}>
-          <Outlet />
-        </div>
-        <Footer />
-        <ButtonUp />
+        <AuthContext.Provider value={authContextValue}>
+          <Header />
+          <LanguageSwitcher />
+          <div className={styles.content}>
+            <Outlet />
+          </div>
+          <Footer />
+          <ButtonUp />
+        </AuthContext.Provider>
       </I18nextProvider>
     </>
   );
