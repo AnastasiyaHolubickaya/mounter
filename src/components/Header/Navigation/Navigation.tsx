@@ -129,14 +129,15 @@ const Item = memo(
           ) : (
             text
           )}
+
+          {path === '#' ? (
+            isSubMenuOpen ? (
+              <FaMinus className={styles.icon} />
+            ) : (
+              <FaPlus className={styles.icon} />
+            )
+          ) : null}
         </Link>
-        {path === '#' ? (
-          isSubMenuOpen ? (
-            <FaMinus className={styles.icon} />
-          ) : (
-            <FaPlus className={styles.icon} />
-          )
-        ) : null}
 
         {path === '#' && subMenu && isSubMenuOpen && (
           <animated.ul

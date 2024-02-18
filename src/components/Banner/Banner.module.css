@@ -12,15 +12,10 @@
 .bg_default {
   background: rgba(0, 0, 0, 0) url('/bg_default.jpg') no-repeat scroll 0 0 /
     cover;
-  height: 50vh;
-
-  @media (max-width: 980px) {
-    height: 50vh;
-  }
 
   @media (max-width: 767px) {
-    top: 75px;
-    height: 20vh;
+    /* top: 75px;
+    height: 20vh; */
   }
 }
 
@@ -75,7 +70,6 @@
   font-size: 30px;
   letter-spacing: normal;
   font-weight: 500;
-  margin-top: 70px;
 }
 
 @media (max-width: 767px) {
