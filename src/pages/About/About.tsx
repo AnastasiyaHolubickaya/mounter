@@ -6,6 +6,7 @@ const About = () => {
   return (
     <>
       <Banner />
+      <div id="scroll_section"></div>
     </>
   );
 };

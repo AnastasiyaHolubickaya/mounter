@@ -5,6 +5,7 @@ const Contact = () => {
   return (
     <>
       <Banner />
+      <div id="scroll_section"></div>
     </>
   );
 };

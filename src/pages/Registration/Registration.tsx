@@ -23,7 +23,9 @@ const Registration = () => {
       <Banner />
       <Wrapper>
         <div className={styles.wrapper}>
-          <h1 className={styles.title}>{t('registration')}</h1>
+          <h1 className={styles.title} id="scroll_section">
+            {t('registration')}
+          </h1>
           <FormRegistration onSubmitSuccess={onSubmitSuccess} />
         </div>
       </Wrapper>

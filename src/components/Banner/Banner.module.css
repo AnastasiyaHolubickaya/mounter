@@ -5,10 +5,12 @@
   top: 0;
   overflow: hidden;
 }
+
 .bg_basik {
   background: rgba(0, 0, 0, 0) url('/bg_banner.jpg') no-repeat scroll 0 0 /
     cover;
 }
+
 .bg_default {
   background: rgba(0, 0, 0, 0) url('/bg_default.jpg') no-repeat scroll 0 0 /
     cover;
@@ -24,6 +26,7 @@
     display: none;
   }
 }
+
 .paper {
   max-width: 900px;
   position: absolute;
@@ -53,7 +56,6 @@
 
   @media (max-width: 767px) {
     gap: 15px;
-    top: 30%;
   }
 }
 
@@ -62,9 +64,11 @@
   font-weight: 700;
   letter-spacing: 15px;
 }
+
 .title_basik {
   color: var(--c-fourth);
 }
+
 .title_default {
   color: var(--c-secondary);
   font-size: 30px;
@@ -195,4 +199,9 @@
   bottom: 267px;
   left: 0;
   z-index: 12;
+}
+
+.icon {
+  font-size: 20px;
+  color: var(--c-secondary);
 }

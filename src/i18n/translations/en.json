@@ -238,8 +238,8 @@
    "contactTitle": "contact",
    "authTitle": "sign in",
    "RegTitle": "registration",
-   "autorisation": "autorisation form",
-   "registration": "registration form",
+   "autorisationF": "autorisation form",
+   "registrationF": "registration form",
    "buttonValueSubmit": "submit",
    "labelEmail":"Email",
    "labelPassword": "Password",
@@ -257,8 +257,16 @@
    "lNameRequared": "Last name is Requared",
    "fNameRequared": "First name is Requared",
    "PassNotConverge": "Passwords do not converge",
-   "badRequest": "Bad request. Please check your input."
-
+   "badRequest": "Bad request. Please check your input.",
+   "Home":"Home",
+   "auth":"Autentification",
+   "registration": "Registration",
+   "gallery": "Gallery",
+   "about": "About Us",
+   "service": "Service",
+   "blog": "Blog",
+   "contact": "Contact"
+   
    
   
 }

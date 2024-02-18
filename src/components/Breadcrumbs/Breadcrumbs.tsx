@@ -1,9 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
 //*Styles
 import styles from './Breadcrumbs.module.css';
+import { useTranslation } from 'react-i18next';
 
 const Breadcrumbs = () => {
   const location = useLocation();
+  const { t } = useTranslation();
   const pathnames = location.pathname.split('/').filter((x) => x);
 
   return (
@@ -12,7 +14,7 @@ const Breadcrumbs = () => {
         <ul className={styles.list}>
           <li className={styles.item}>
             <Link to="/" className={styles.link}>
-              Home
+              {t('Home')}
             </Link>
           </li>
           <span>/</span>
@@ -22,10 +24,10 @@ const Breadcrumbs = () => {
             return (
               <li key={name} className={styles.item}>
                 {isLast ? (
-                  name
+                  t(name)
                 ) : (
                   <Link to={routeTo} className={styles.link}>
-                    {name}
+                    {t(name)}
                   </Link>
                 )}
               </li>

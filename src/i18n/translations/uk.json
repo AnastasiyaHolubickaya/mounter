@@ -240,8 +240,8 @@
    "contactTitle": "контакти",
    "authTitle": "вхід",
    "RegTitle": "реєстрація",
-   "autorisation": "форма авторізації",
-   "registration": "форма реєстрації",
+   "autorisationF": "форма авторізації",
+   "registrationF": "форма реєстрації",
    "buttonValueSubmit": "відправити",
    "labelEmail":"Емаіл",
    "labelPassword": "Пароль",
@@ -259,6 +259,14 @@
    "lNameRequared": "Поле Прізвище обов'язкове для заповнення",
    "fNameRequared": "Поле Ім'я обов'язкове для заповнення",
    "PassNotConverge": "Невірний пароль",
-   "badRequest": "Неверный запрос. Пожалуйста, проверьте введенные данные."
+   "badRequest": "Неверный запрос. Пожалуйста, проверьте введенные данные.",
+   "Home": "Головна",
+   "auth":"Авторізація",
+   "registration": "Реєстрація",
+   "gallery": "Галерея",
+   "about": "Про нас",
+   "service": "Послуги",
+   "blog": "Блог",
+   "contact": "Контакти"
   
 }

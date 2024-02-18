@@ -1,16 +1,19 @@
 import { memo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useSpring, animated } from 'react-spring';
+import { Link } from 'react-scroll';
 import cn from 'classnames';
+import { FaArrowDown } from 'react-icons/fa6';
 //*Styles
 import styles from './Banner.module.css';
 //*Components
 import Button from '../Button/Button';
 import AnimatedBannerSubTitle from '../AnimatedBannerSubTitle/AnimatedBannerSubTitle';
 import AnimatedBannerImage from '../AnimatedBannerImage/AnimatedBannerImage';
-//*Enum
-import { AnimationName } from '../../types/animationTypes';
 import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
+//*Types
+import { AnimationName } from '../../types/animationTypes';
 
 type dataType = {
   imageData?: { src: string; animationName: AnimationName; name: string }[];
@@ -20,6 +23,13 @@ const Banner = ({ imageData = [] }: dataType) => {
   const { t } = useTranslation();
 
   const { pathname } = useLocation();
+
+  const props = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    loop: { reverse: true },
+    config: { duration: 600 },
+  });
 
   const getPage = useCallback((pathname: string) => {
     const pageTitles: Record<string, string> = {
@@ -72,7 +82,23 @@ const Banner = ({ imageData = [] }: dataType) => {
         >
           {t(getPage(pathname))}
         </h1>
-        {pathname !== '/' && <Breadcrumbs />}
+        {pathname !== '/' && (
+          <>
+            <Breadcrumbs />
+
+            <Link
+              to="scroll_section"
+              smooth={true}
+              duration={800}
+              offset={-50}
+              spy={true}
+            >
+              <animated.div style={props}>
+                <FaArrowDown className={styles.icon} />{' '}
+              </animated.div>
+            </Link>
+          </>
+        )}
         {pathname === '/' && (
           <>
             <AnimatedBannerSubTitle />
