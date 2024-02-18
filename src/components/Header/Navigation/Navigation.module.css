@@ -59,6 +59,10 @@
   color: var(--c-secondary);
 }
 
+.icon_list {
+  right: -3px;
+}
+
 .sub_menu {
   width: 230px;
   height: 0;

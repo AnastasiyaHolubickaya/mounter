@@ -132,9 +132,9 @@ const Item = memo(
 
           {path === '#' ? (
             isSubMenuOpen ? (
-              <FaMinus className={styles.icon} />
+              <FaMinus className={cn([styles.icon, styles.icon_list])} />
             ) : (
-              <FaPlus className={styles.icon} />
+              <FaPlus className={cn([styles.icon, styles.icon_list])} />
             )
           ) : null}
         </Link>
