@@ -10,6 +10,7 @@ import AnimatedBannerSubTitle from '../AnimatedBannerSubTitle/AnimatedBannerSubT
 import AnimatedBannerImage from '../AnimatedBannerImage/AnimatedBannerImage';
 //*Enum
 import { AnimationName } from '../../types/animationTypes';
+import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
 
 type dataType = {
   imageData?: { src: string; animationName: AnimationName; name: string }[];
@@ -28,7 +29,7 @@ const Banner = ({ imageData = [] }: dataType) => {
       '/service': 'serviceTitle',
       '/contact': 'contactTitle',
       '/auth': 'authTitle',
-      '/registration': 'RegTitle'
+      '/registration': 'RegTitle',
     };
 
     return pageTitles[pathname] || '';
@@ -71,6 +72,7 @@ const Banner = ({ imageData = [] }: dataType) => {
         >
           {t(getPage(pathname))}
         </h1>
+        {pathname !== '/' && <Breadcrumbs />}
         {pathname === '/' && (
           <>
             <AnimatedBannerSubTitle />
