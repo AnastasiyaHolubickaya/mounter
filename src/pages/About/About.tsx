@@ -6,7 +6,6 @@ import Title from '../../components/Title/Title';
 import AnimatedComponent from '../../components/AnimatedComponent/AnimatedComponent';
 import Picture from '../../components/Picture/Picture';
 import Button from '../../components/Button/Button';
-import Skill from '../../components/Skill/Skill';
 import Wrapper from '../../components/Wrapper/Wrapper';
 
 const About = () => {
@@ -29,7 +28,6 @@ const About = () => {
             <Picture />
           </AnimatedComponent>
         </div>
-        <Skill />
       </Wrapper>
     </>
   );
