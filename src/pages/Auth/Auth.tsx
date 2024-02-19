@@ -23,7 +23,7 @@ const Auth = () => {
       <Banner />
       <Wrapper>
         <div className={styles.wrapper} id="scroll_section">
-          <h1 className={styles.title}>{t('autorisation')}</h1>
+          <h1 className={styles.title}>{t('autorisationF')}</h1>
           <FormLogin onSubmitSuccess={onSubmitSuccess} />
         </div>
       </Wrapper>

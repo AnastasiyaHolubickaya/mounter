@@ -24,7 +24,7 @@ const Registration = () => {
       <Wrapper>
         <div className={styles.wrapper}>
           <h1 className={styles.title} id="scroll_section">
-            {t('registration')}
+            {t('registrationF')}
           </h1>
           <FormRegistration onSubmitSuccess={onSubmitSuccess} />
         </div>

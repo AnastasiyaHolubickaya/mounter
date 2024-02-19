@@ -102,7 +102,15 @@ const Banner = ({ imageData = [] }: dataType) => {
         {pathname === '/' && (
           <>
             <AnimatedBannerSubTitle />
-            <Button type="button" value={t('buttonValue')} />
+            <Link
+              to="scroll_section"
+              smooth={true}
+              duration={800}
+              offset={-50}
+              spy={true}
+            >
+              <Button type="button" value={t('buttonValue')} />
+            </Link>
           </>
         )}
       </div>

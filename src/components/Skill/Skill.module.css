@@ -1,0 +1,16 @@
+.items {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}

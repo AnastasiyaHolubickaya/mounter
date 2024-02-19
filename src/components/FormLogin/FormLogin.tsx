@@ -71,11 +71,17 @@ const FormLogin = ({ onSubmitSuccess }: FormProps) => {
       .catch(({ response }) => {
         if (response.status === 500) {
           setErrorMessage(t('serverError'));
+        } else if (response.status === 400) {
+          if (response.data.messagePass) {
+            setErrorMessage(t('messagePass'));
+          }
+          if (response.data.messageMail) {
+            setErrorMessage(t('messageMail'));
+          }
+        } else {
+          setErrorMessage(t('unknownErrors'));
         }
-        if (response.status === 400) {
-          setErrorMessage(t('badRequest'));
-        }
-        setErrors(response.data.message);
+        setErrors(response.data?.message || t('unknownErrors'));
         setIsAuthenticated(false);
       })
       .finally(() => {

@@ -257,7 +257,10 @@
    "lNameRequared": "Last name is Requared",
    "fNameRequared": "First name is Requared",
    "PassNotConverge": "Passwords do not converge",
-   "badRequest": "Bad request. Please check your input.",
+   "badRequest": "User alredy exists",
+   "messagePass": "Password do not converge",
+   "messageMail":"There is no user with this email",
+   "unknownErrors": "Unknown Errors",
    "Home":"Home",
    "auth":"Autentification",
    "registration": "Registration",
@@ -265,7 +268,21 @@
    "about": "About Us",
    "service": "Service",
    "blog": "Blog",
-   "contact": "Contact"
+   "contact": "Contact",
+   "skills":[
+    {
+      "name":"graphic design",
+      "text": "Graphic design is a creative process of crafting visual elements using various graphic tools. "
+    },
+    {
+      "name":"photoshop",
+      "text": "Photoshop is a powerful and versatile image editing software developed by Adobe "
+    },
+    {
+      "name":"app design",
+      "text": "App design refers to the process of creating the visual and interactive aspects of a mobile application.  "
+    }
+   ]
    
    
   

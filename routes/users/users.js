@@ -1,8 +1,6 @@
-//*Base
 import { Router } from 'express';
 import { User, addUser, comparePass } from '../../models/user.js';
 import config from '../../config/bd.js';
-import { useTranslation } from 'react-i18next';
 
 const router = Router();
 
@@ -62,7 +60,6 @@ router.post('/registration', async (request, response) => {
     });
 
     addUser(newUser, (user) => {
-      //response.status(201).json(user);
       user.save();
       response.status(201).json({
         message: 'Sucsess!',
@@ -87,7 +84,7 @@ router.post('/auth', async (request, response) => {
 
     if (!user) {
       return response.status(400).json({
-        message: 'There is no user with this email',
+        messageMail: 'There is no user with this email',
       });
     }
 
