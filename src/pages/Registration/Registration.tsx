@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 // * Styles
@@ -33,4 +34,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default memo(Registration);

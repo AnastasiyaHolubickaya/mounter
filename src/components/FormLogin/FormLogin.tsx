@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { memo, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Formik, FormikErrors, FormikHelpers } from 'formik';
 import axios from 'axios';
@@ -151,4 +151,4 @@ const FormLogin = ({ onSubmitSuccess }: FormProps) => {
   );
 };
 
-export default FormLogin;
+export default memo(FormLogin);

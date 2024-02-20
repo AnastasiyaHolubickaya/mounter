@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 //*Styles
@@ -31,4 +32,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default memo(Auth);

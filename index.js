@@ -4,7 +4,7 @@ import config from './config/bd.js';
 import mongoose from 'mongoose';
 import users from './routes/users/users.js';
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 
 // * Connect to DB

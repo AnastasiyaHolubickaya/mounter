@@ -1,16 +1,11 @@
-import styles from './Service.module.css'
+import styles from './Service.module.css';
 
-interface IComponentProps {}
-
-const Service:React.FC<IComponentProps> = () => {
- 
-
+const Service = () => {
   return (
     <>
-    <h1 className={styles.wrapper}>Service page</h1>
-     
+      <h1 className={styles.wrapper}>Service page</h1>
     </>
-  )
-}
+  );
+};
 
 export default Service;

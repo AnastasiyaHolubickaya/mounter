@@ -1,4 +1,5 @@
 //import styles from './Gallery.module.css'
+import { memo } from 'react';
 import Banner from '../../components/Banner/Banner';
 
 const Gallery = () => {
@@ -10,4 +11,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default memo(Gallery);

@@ -1,16 +1,11 @@
-import styles from './Team.module.css'
+import styles from './Team.module.css';
 
-interface IComponentProps {}
-
-const Team:React.FC<IComponentProps> = () => {
- 
-
+const Team = () => {
   return (
     <>
-    <h1 className={styles.wrapper}>Team page</h1>
-     
+      <h1 className={styles.wrapper}>Team page</h1>
     </>
-  )
-}
+  );
+};
 
 export default Team;

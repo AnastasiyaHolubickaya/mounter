@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 //*Styles
 import styles from './Breadcrumbs.module.css';
-import { useTranslation } from 'react-i18next';
 
 const Breadcrumbs = () => {
   const location = useLocation();

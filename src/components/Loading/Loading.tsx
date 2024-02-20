@@ -1,16 +1,15 @@
-import styles from './Loading.module.css'
+import { memo } from 'react';
+//*Styles
+import styles from './Loading.module.css';
 
-interface IComponentProps {}
-
-const Loading:React.FC<IComponentProps> = () => {
- 
-
+const Loading = () => {
   return (
     <>
-    <h1 className={styles.wrapper}>Hello Anastasiya!</h1>
-     
+      <div className={styles.item}>
+        <img src="/loading.gif" alt="Loading" />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Loading;
+export default memo(Loading);

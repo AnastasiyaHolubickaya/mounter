@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 //import styles from './Blog.module.css'
 //*Components
@@ -13,4 +14,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default memo(Blog);

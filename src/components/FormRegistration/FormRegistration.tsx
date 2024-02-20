@@ -1,14 +1,12 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Formik, FormikErrors, FormikHelpers } from 'formik';
 import InputMask from 'react-input-mask';
-
+import axios from 'axios';
 //*Styles
 import styles from './FormRegistration.module.css';
 //*Components
 import Button from '../Button/Button';
-import axios from 'axios';
-//*Context
 
 type FormProps = {
   onSubmitSuccess: () => void;
@@ -205,4 +203,4 @@ const FormRegistration = ({ onSubmitSuccess }: FormProps) => {
   );
 };
 
-export default FormRegistration;
+export default memo(FormRegistration);

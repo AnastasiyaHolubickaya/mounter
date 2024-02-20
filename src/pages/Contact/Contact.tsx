@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Banner from '../../components/Banner/Banner';
 //import styles from './Contact.module.css'
 
@@ -10,4 +11,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default memo(Contact);

@@ -1,0 +1,32 @@
+.items {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  color: #777777;
+}
+
+.title {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 30px;
+  margin-top: 11px;
+}
+
+.progress {
+  margin-top: 50px;
+}

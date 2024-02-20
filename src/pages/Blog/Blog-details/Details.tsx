@@ -1,16 +1,12 @@
-import styles from './Details.module.css'
+import { memo } from 'react';
+import styles from './Details.module.css';
 
-interface IComponentProps {}
-
-const Details:React.FC<IComponentProps> = () => {
- 
-
+const Details = () => {
   return (
     <>
-    <h1 className={styles.wrapper}>Blog details page</h1>
-     
+      <h1 className={styles.wrapper}>Blog details page</h1>
     </>
-  )
-}
+  );
+};
 
-export default Details;
+export default memo(Details);

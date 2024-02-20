@@ -272,18 +272,36 @@
    "skills":[
     {
       "name":"graphic design",
-      "text": "Graphic design is a creative process of crafting visual elements using various graphic tools. "
+      "text": "Graphic design is a creative process of crafting visual elements using various graphic tools."
     },
     {
       "name":"photoshop",
-      "text": "Photoshop is a powerful and versatile image editing software developed by Adobe "
+      "text": "Photoshop is a powerful and versatile image editing software developed by Adobe."
     },
     {
       "name":"app design",
-      "text": "App design refers to the process of creating the visual and interactive aspects of a mobile application.  "
+      "text": "App design refers to the process of creating the visual and interactive aspects of a mobile app."
     }
-   ]
-   
-   
-  
+   ],
+   "pricing": [
+    {
+      "price": 29,
+      "plan": "A Basic plan for you",
+      "text": "Free basic support\nMost popular 15 html template\nTop 10 psd template"
+    },
+    {
+      "price": 39,
+      "plan": "A Platinum plan for you",
+      "text": "Free Platinum support\nMost popular 40 html template\nTop 20 psd template"
+    },
+    {
+      "price": 49,
+      "plan": "A Diamond plan for you",
+      "text": "Free Diamond support\nMost popular 100 html template\nTop 100 psd template"
+    }
+   ],
+   "silence":{
+    "title":"Work Hard In Silence",
+    "text":"There are many variations of passages of Lorem Ipsum is available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly.\nThere are many variations of passages of Lorem Ipsum not available, but the majority have suffered."
+   }
 }

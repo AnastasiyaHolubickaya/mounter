@@ -1,6 +1,6 @@
+import { ReactNode, memo } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { useInView } from 'react-intersection-observer';
-import { ReactNode } from 'react';
 ///Styles
 import baseStyles from '../../styles/base.module.css';
 
@@ -35,4 +35,4 @@ const AnimatedComponent = ({ children }: propsType) => {
   );
 };
 
-export default AnimatedComponent;
+export default memo(AnimatedComponent);
