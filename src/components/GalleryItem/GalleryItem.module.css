@@ -1,0 +1,49 @@
+.column_group {
+  grid-column: span 2;
+}
+
+.image {
+  width: 100%;
+}
+
+.item {
+  position: relative;
+}
+
+.item,
+.image {
+  vertical-align: top;
+}
+
+.hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--c-third);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  flex-direction: column;
+  transition: all 0.5s ease 0s;
+  color: var(--c-secondary);
+  text-align: center;
+}
+
+.hidden span:first-child {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.hidden span:last-child {
+  font-size: 14px;
+  text-transform: none;
+}
+
+.hidden:hover {
+  opacity: 0.9;
+}

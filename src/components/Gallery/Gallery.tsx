@@ -1,6 +1,5 @@
 import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import cn from 'classnames';
 //*Components
 import Title from '../Title/Title';
 import Wrapper from '../Wrapper/Wrapper';
@@ -8,6 +7,7 @@ import Sorting from '../Sorting/Sorting';
 import AnimatedComponent from '../AnimatedComponent/AnimatedComponent';
 // * Styles
 import styles from './Gallery.module.css';
+import GalleryItem from '../GalleryItem/GalleryItem';
 
 type GalleryPropsType = {
   src: string;
@@ -15,13 +15,6 @@ type GalleryPropsType = {
   subTitle: string;
   id: number;
   category: string | null;
-};
-
-type ItemPropsType = {
-  src: string;
-  title: string;
-  subTitle: string;
-  id: number;
 };
 
 const Gallery = () => {
@@ -56,7 +49,7 @@ const Gallery = () => {
         <AnimatedComponent>
           <div className={styles.items}>
             {filteredImages.map((element, index) => (
-              <Item
+              <GalleryItem
                 key={'image item -' + element + index}
                 id={index}
                 src={element.src}
@@ -68,23 +61,6 @@ const Gallery = () => {
         </AnimatedComponent>
       </Wrapper>
     </section>
-  );
-};
-
-const Item = ({ src, title, subTitle, id }: ItemPropsType) => {
-  return (
-    <div
-      className={cn(
-        { [styles.column_group]: id === 2 || id === 3 },
-        styles.item
-      )}
-    >
-      <img className={styles.image} src={src} loading="lazy" alt={title} />
-      <div className={styles.hidden}>
-        <span>{title}</span>
-        <span>{subTitle}</span>
-      </div>
-    </div>
   );
 };
 
