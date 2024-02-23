@@ -1,12 +1,29 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
+//*Styles
+import styles from './Contact.module.css';
+//*Components
 import Banner from '../../components/Banner/Banner';
-//import styles from './Contact.module.css'
+import Map from '../../components/Map/Map';
+import Title from '../../components/Title/Title';
+import Wrapper from '../../components/Wrapper/Wrapper';
+import ContactAddress from '../../components/ContactAddress/ContactAddress';
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Banner />
-      <div id="scroll_section"></div>
+      <section>
+        <Wrapper>
+          <Title title={t('titleContact')} subtitle={t('subTitle')} />
+          <div className={styles.map_block} id="scroll_section">
+            <Map />
+          </div>
+          <ContactAddress />
+        </Wrapper>
+      </section>
     </>
   );
 };

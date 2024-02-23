@@ -2,10 +2,14 @@ import { memo } from 'react';
 // * Styles
 import styles from './Picture.module.css';
 
-const Picture = () => {
+type PropsType = {
+  src: string;
+};
+
+const Picture = ({ src }: PropsType) => {
   return (
     <div className={styles.wrapper}>
-      <img src="/monitors.png" alt="logo" className={styles.image} />
+      <img src={src} alt="logo" className={styles.image} />
     </div>
   );
 };

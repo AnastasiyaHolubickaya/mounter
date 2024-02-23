@@ -1,10 +1,12 @@
-import styles from './Gallery.module.css';
-import { memo } from 'react';
 import { useState, useEffect } from 'react';
+import { memo } from 'react';
 import { Element } from 'react-scroll';
-import axios from 'axios';
-import Banner from '../../components/Banner/Banner';
 import ReactPaginate from 'react-paginate';
+import axios from 'axios';
+//*Styles
+import styles from './Gallery.module.css';
+//*Components
+import Banner from '../../components/Banner/Banner';
 import Wrapper from '../../components/Wrapper/Wrapper';
 import GalleryItem from '../../components/GalleryItem/GalleryItem';
 
@@ -25,7 +27,11 @@ const Gallery = () => {
 
   const fetchImages = (selectedPage = 0) => {
     axios
-      .get('/images/curated', {
+      .get('https://api.pexels.com/v1/curated', {
+        headers: {
+          Authorization:
+            '8PSieWtK09vlW7mlJ8qJVS3W3CpKYLMlNCOvKD6Zz4UKfptt8sxHWF2G',
+        },
         params: {
           per_page: 20,
           page: selectedPage + 1,

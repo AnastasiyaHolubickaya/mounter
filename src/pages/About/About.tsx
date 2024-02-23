@@ -46,7 +46,7 @@ const About = () => {
                 </Link>
               </div>
               <AnimatedComponent>
-                <Picture />
+                <Picture src='"/monitors.png"' />
               </AnimatedComponent>
             </div>
           </section>

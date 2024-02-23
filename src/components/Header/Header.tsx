@@ -4,7 +4,7 @@ import cn from 'classnames';
 import styles from './Header.module.css';
 //*Components
 import Wrapper from '../Wrapper/Wrapper';
-import Navigation from './Navigation/Navigation';
+import Navigation from '../Navigation/Navigation';
 import Burger from '../Burger/Burger';
 import Logo from '../Logo/Logo';
 import AuthContext from '../../authContext';

@@ -1,0 +1,29 @@
+.items {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+
+  @media screen and (max-width: 830px) {
+    justify-content: center;
+    gap: 50px;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  width: 50px;
+}
+
+.text {
+  color: #666;
+  font-size: 24px;
+}

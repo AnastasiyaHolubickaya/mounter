@@ -22,8 +22,6 @@ const Feature = () => {
     returnObjects: true,
   });
 
-  const baseStyle: boolean = false;
-
   return (
     <Element name="scroll_section">
       <section>
@@ -34,12 +32,12 @@ const Feature = () => {
           <div className={styles.items}>
             <AnimatedComponent>
               <div className={styles.accordeon}>
-                <Accordeon items={accordeonList} baseStyle={baseStyle} />
+                <Accordeon items={accordeonList} baseStyle={false} />
               </div>
             </AnimatedComponent>
             <div className={styles.picture}>
               <AnimatedComponent>
-                <Picture />
+                <Picture src="/monitors.png" />
               </AnimatedComponent>
             </div>
           </div>

@@ -4,14 +4,14 @@ import { useTranslation } from 'react-i18next';
 import { animated, useSpring } from 'react-spring';
 import cn from 'classnames';
 // * Style
-import baseStyles from '../../../styles/base.module.css';
+import baseStyles from '../../styles/base.module.css';
 import styles from './Navigation.module.css';
 //*Components
-import Logo from '../../Logo/Logo';
+import Logo from '../Logo/Logo';
 //*Icons
 import { FaMinus, FaPlus } from 'react-icons/fa';
 import { FaHouseCircleExclamation } from 'react-icons/fa6';
-import AuthContext from '../../../authContext';
+import AuthContext from '../../authContext';
 
 type DataPropsType = {
   path: string;
