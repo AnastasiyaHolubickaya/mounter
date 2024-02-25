@@ -24,6 +24,7 @@ type ItemPropsType = {
   subMenu?: DataPropsType[];
   isMobile?: boolean;
   isAuthenticated?: boolean;
+  setIsAuthenticated?: any;
 };
 
 type NavigationPropsType = {
@@ -31,7 +32,8 @@ type NavigationPropsType = {
 };
 
 const Navigation = ({ setOpen }: NavigationPropsType) => {
-  const { isMobile, isAuthenticated } = useContext(AuthContext);
+  const { isMobile, isAuthenticated, setIsAuthenticated } =
+    useContext(AuthContext);
   const { t } = useTranslation();
 
   const menuFirst: Array<DataPropsType> = t('list.menuFirst', {
@@ -75,6 +77,7 @@ const Navigation = ({ setOpen }: NavigationPropsType) => {
               subMenu={subMenu}
               isMobile={isMobile}
               isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
             />
           ))}
         </div>
@@ -84,7 +87,14 @@ const Navigation = ({ setOpen }: NavigationPropsType) => {
 };
 
 const Item = memo(
-  ({ path, text, subMenu, isMobile, isAuthenticated }: ItemPropsType) => {
+  ({
+    path,
+    text,
+    subMenu,
+    isMobile,
+    isAuthenticated,
+    setIsAuthenticated,
+  }: ItemPropsType) => {
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
     const springProps = useSpring({
@@ -106,6 +116,9 @@ const Item = memo(
       if (path === '#') {
         e.stopPropagation();
         setIsSubMenuOpen(!isSubMenuOpen);
+      }
+      if (path === '/auth' && isAuthenticated) {
+        setIsAuthenticated(false);
       }
     };
 
