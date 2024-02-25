@@ -28,6 +28,11 @@ const initialValues: FormValuesType = {
 };
 
 const FormLogin = ({ onSubmitSuccess }: FormProps) => {
+  const apiUrl =
+    process.env.NODE_ENV === 'production'
+      ? '/users/auth'
+      : 'http://localhost:3000/users/auth';
+
   const { t } = useTranslation();
 
   const { setIsAuthenticated } = useContext(AuthContext);
@@ -56,7 +61,7 @@ const FormLogin = ({ onSubmitSuccess }: FormProps) => {
     { resetForm, setErrors, setSubmitting }: FormikHelpers<FormValuesType>
   ) => {
     axios
-      .post('http://localhost:3000/users/auth', values, {
+      .post(apiUrl, values, {
         headers: {
           Authorization: localStorage.getItem('token') || '',
         },

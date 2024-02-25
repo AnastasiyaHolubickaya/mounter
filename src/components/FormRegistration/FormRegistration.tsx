@@ -33,6 +33,11 @@ const initialValues: FormValuesType = {
 };
 
 const FormRegistration = ({ onSubmitSuccess }: FormProps) => {
+  const apiUrl =
+    process.env.NODE_ENV === 'production'
+      ? '/users/registration'
+      : 'http://localhost:3000/users/registration';
+
   const { t } = useTranslation();
 
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -74,7 +79,7 @@ const FormRegistration = ({ onSubmitSuccess }: FormProps) => {
     { resetForm, setErrors, setSubmitting }: FormikHelpers<FormValuesType>
   ) => {
     axios
-      .post('http://localhost:3000/users/registration', values)
+      .post(apiUrl, values)
       .then(({ data }) => {
         setSuccessMessage(t('registrationSuccess'));
         resetForm({ values: initialValues });
