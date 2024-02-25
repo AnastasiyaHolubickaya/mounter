@@ -92,7 +92,7 @@ const FormRegistration = ({ onSubmitSuccess }: FormProps) => {
         } else if (response.status === 400) {
           setErrorMessage(t('badRequest'));
         } else {
-          setErrorMessage(`${response.status}, t('unknownErrors')`);
+          setErrorMessage(`${response.status}, ${t('unknownErrors')}`);
         }
         setErrors(response.data?.message || t('unknownError'));
       })
