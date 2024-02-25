@@ -10,4 +10,3 @@
   from = "/users/*"
   to = "/.netlify/functions/index"
   status = 200 
-  force = true
