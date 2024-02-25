@@ -1,5 +1,6 @@
 [build]
   command = "npm run build"  # Команда для сборки проекта
+  functions = "index.js"
   publish = "dist/"          # Папка, содержащая статические файлы после сборки
 
 [dev]
