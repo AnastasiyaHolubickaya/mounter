@@ -1,13 +1,13 @@
 [build]
   command = "npm run build"  # Команда для сборки проекта
-  functions = "index.js"
   publish = "dist/"          # Папка, содержащая статические файлы после сборки
 
 [dev]
   command = "npm run start"  # Команда для запуска сервера в режиме разработки
+  functions = "index.js"
 
   [[redirects]]
-  from = "/users/*"
-  to = "index.js"
-  status = 200
+  from = "/users*"
+  to = "/.netlify/functions/index"
+  status = 200 
   force = true
