@@ -7,7 +7,7 @@
   functions = "index.js"
 
   [[redirects]]
-  from = "/users*"
+  from = "/users/*"
   to = "/.netlify/functions/index"
   status = 200 
   force = true
