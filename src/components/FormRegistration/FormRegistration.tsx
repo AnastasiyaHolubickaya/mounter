@@ -7,6 +7,7 @@ import axios from 'axios';
 import styles from './FormRegistration.module.css';
 //*Components
 import Button from '../Button/Button';
+import apiUrl from '../FormLogin/apiUrl';
 
 type FormProps = {
   onSubmitSuccess: () => void;
@@ -33,11 +34,6 @@ const initialValues: FormValuesType = {
 };
 
 const FormRegistration = ({ onSubmitSuccess }: FormProps) => {
-  const apiUrl =
-    process.env.NODE_ENV === 'production'
-      ? 'https://mounter-app.netlify.app/users/registration'
-      : 'http://localhost:3000/users/registration';
-
   const { t } = useTranslation();
 
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -79,7 +75,7 @@ const FormRegistration = ({ onSubmitSuccess }: FormProps) => {
     { resetForm, setErrors, setSubmitting }: FormikHelpers<FormValuesType>
   ) => {
     axios
-      .post(apiUrl, values)
+      .post(`${apiUrl}/users/registration`, values)
       .then(({ data }) => {
         setSuccessMessage(t('registrationSuccess'));
         resetForm({ values: initialValues });

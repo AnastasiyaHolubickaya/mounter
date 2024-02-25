@@ -8,6 +8,7 @@ import styles from './FormLogin.module.css';
 import Button from '../../components/Button/Button';
 //*Context
 import AuthContext from '../../authContext';
+import apiUrl from './apiUrl';
 
 //* Types
 type FormValuesType = {
@@ -28,11 +29,6 @@ const initialValues: FormValuesType = {
 };
 
 const FormLogin = ({ onSubmitSuccess }: FormProps) => {
-  const apiUrl =
-    process.env.NODE_ENV === 'production'
-      ? 'https://mounter-app.netlify.app/users/auth'
-      : 'http://localhost:3000/users/auth';
-
   const { t } = useTranslation();
 
   const { setIsAuthenticated } = useContext(AuthContext);
@@ -61,7 +57,7 @@ const FormLogin = ({ onSubmitSuccess }: FormProps) => {
     { resetForm, setErrors, setSubmitting }: FormikHelpers<FormValuesType>
   ) => {
     axios
-      .post(apiUrl, values, {
+      .post(`${apiUrl}/users/auth`, values, {
         headers: {
           Authorization: localStorage.getItem('token') || '',
         },
