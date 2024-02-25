@@ -7,18 +7,13 @@
 }
 
 .bg_basik {
-  background: rgba(0, 0, 0, 0) url('/bg_banner.jpg') no-repeat scroll 0 0 /
+  background: rgba(255, 255, 255, 0) url('/bg_banner2.jpg') no-repeat scroll 0 0 /
     cover;
 }
 
 .bg_default {
-  background: rgba(0, 0, 0, 0) url('/bg_default.jpg') no-repeat scroll 0 0 /
-    cover;
-
-  @media (max-width: 767px) {
-    /* top: 75px;
-    height: 20vh; */
-  }
+  background: rgba(255, 255, 255, 0) url('/bg_default2.jpg') no-repeat scroll 0
+    0 / cover;
 }
 
 .animation_images {

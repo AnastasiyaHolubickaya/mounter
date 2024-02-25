@@ -3,7 +3,6 @@ import cors from 'cors';
 import config from './config/bd.js';
 import mongoose from 'mongoose';
 import users from './routes/users/users.js';
-//import images from './routes/images/images.js';
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -21,7 +20,6 @@ app.use(cors());
 
 // * Routes
 app.use('/users', users);
-//app.use('/images', images);
 
 // * Start server
 app.listen(port, () => console.log(` Server started in port: ${port} `));

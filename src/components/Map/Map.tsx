@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { memo, useEffect, useRef } from 'react';
-import L, { LeafletMouseEvent } from 'leaflet';
+import L, { Icon, LeafletMouseEvent } from 'leaflet';
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
 import { useTranslation } from 'react-i18next';
 //*Styles Map
@@ -16,9 +16,19 @@ const Map = () => {
     if (mapRef.current) {
       const initialCenter: L.LatLngExpression = [51.505, -0.09];
 
+      const customIcon: Icon = L.icon({
+        iconUrl: '/custom_marker.png',
+        iconSize: [32, 40],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
+      });
+
       const map = L.map(mapRef.current).setView(initialCenter, 13);
 
-      const marker = L.marker(initialCenter, { alt: 'New York' }).addTo(map);
+      const marker = L.marker(initialCenter, {
+        icon: customIcon,
+        alt: 'New York',
+      }).addTo(map);
 
       marker.bindPopup(t('mapMarker')).openPopup();
 

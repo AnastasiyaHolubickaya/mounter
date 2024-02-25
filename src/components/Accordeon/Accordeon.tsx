@@ -38,8 +38,8 @@ const Accordeon = ({ items, baseStyle }: AccordionProps) => {
 
   const handleToggle = (id: number) => {
     setOpenItem((prevOpenItem) => (prevOpenItem === id ? null : id));
-    console.log(id);
   };
+
   return (
     <div className={styles.group}>
       {items.map((item: itemsPropsType, index: number) => (
@@ -48,7 +48,7 @@ const Accordeon = ({ items, baseStyle }: AccordionProps) => {
           title={item.title}
           content={item.content}
           id={index}
-          isOpen={openItem === index}
+          isOpen={openItem === index || (index === 0 && openItem === null)}
           onToggle={handleToggle}
           baseStyle={baseStyle}
         />

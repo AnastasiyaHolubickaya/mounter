@@ -1,11 +1,3 @@
-.column_group {
-  grid-column: span 2;
-}
-
-.image {
-  width: 100%;
-}
-
 .item {
   position: relative;
 }

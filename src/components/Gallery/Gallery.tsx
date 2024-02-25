@@ -46,19 +46,18 @@ const Gallery = () => {
         <AnimatedComponent>
           <Sorting categories={categories} onClick={handleCategoryClick} />
         </AnimatedComponent>
-        <AnimatedComponent>
-          <div className={styles.items}>
-            {filteredImages.map((element, index) => (
-              <GalleryItem
-                key={'image item -' + element + index}
-                id={index}
-                src={element.src}
-                title={element.title}
-                subTitle={element.subTitle}
-              />
-            ))}
-          </div>
-        </AnimatedComponent>
+
+        <div className={styles.items}>
+          {filteredImages.map((element, index) => (
+            <GalleryItem
+              key={'image item -' + element + index}
+              id={index}
+              src={element.src}
+              title={element.title}
+              subTitle={element.subTitle}
+            />
+          ))}
+        </div>
       </Wrapper>
     </section>
   );

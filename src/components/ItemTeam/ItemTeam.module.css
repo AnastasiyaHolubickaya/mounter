@@ -4,6 +4,10 @@
 
 .item {
   position: relative;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 250px;
+  }
 }
 
 .item:hover .hidden {

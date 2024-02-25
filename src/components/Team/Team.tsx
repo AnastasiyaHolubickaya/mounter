@@ -6,7 +6,6 @@ import styles from './Team.module.css';
 import Wrapper from '../Wrapper/Wrapper';
 import Title from '../Title/Title';
 import ItemTeam from '../ItemTeam/ItemTeam';
-import AnimatedComponent from '../AnimatedComponent/AnimatedComponent';
 
 type propsType = {
   src: string;
@@ -27,18 +26,16 @@ const Team = () => {
     <Wrapper>
       <section>
         <Title title={t('titleTeam')} subtitle={t('subTitle')} />
-        <AnimatedComponent>
-          <div className={styles.items}>
-            {firstThreePhotos.map((element, index) => (
-              <ItemTeam
-                key={'image item -' + element + index}
-                src={element.src}
-                title={element.title}
-                subTitle={element.subTitle}
-              />
-            ))}
-          </div>
-        </AnimatedComponent>
+        <div className={styles.items}>
+          {firstThreePhotos.map((element, index) => (
+            <ItemTeam
+              key={'image item -' + element + index}
+              src={element.src}
+              title={element.title}
+              subTitle={element.subTitle}
+            />
+          ))}
+        </div>
       </section>
     </Wrapper>
   );

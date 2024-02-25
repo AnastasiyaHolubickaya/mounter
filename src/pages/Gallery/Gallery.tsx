@@ -61,7 +61,7 @@ const Gallery = () => {
       <Banner />
       <Wrapper>
         <Element name="scroll_section">
-          <div className={styles.items}>
+          <div className={styles.items_flex}>
             {images &&
               images.map((image, index) => (
                 <GalleryItem

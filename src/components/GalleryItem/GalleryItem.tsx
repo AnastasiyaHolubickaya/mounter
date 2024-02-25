@@ -2,6 +2,8 @@ import { memo } from 'react';
 import cn from 'classnames';
 // * Styles
 import styles from './GalleryItem.module.css';
+//*Components
+import AnimatedComponent from '../AnimatedComponent/AnimatedComponent';
 
 type ItemPropsType = {
   src: string;
@@ -12,18 +14,20 @@ type ItemPropsType = {
 
 const GalleryItem = ({ src, title, subTitle, id }: ItemPropsType) => {
   return (
-    <div
-      className={cn(
-        { [styles.column_group]: id === 2 || id === 3 },
-        styles.item
-      )}
-    >
-      <img className={styles.image} src={src} loading="lazy" alt={title} />
-      <div className={styles.hidden}>
-        <span>{title}</span>
-        <span>{subTitle}</span>
+    <AnimatedComponent>
+      <div
+        className={cn([
+          id === 2 || id === 3 ? styles.column_group : null,
+          styles.item,
+        ])}
+      >
+        <img className={styles.image} src={src} loading="lazy" alt={title} />
+        <div className={styles.hidden}>
+          <span>{title}</span>
+          <span>{subTitle}</span>
+        </div>
       </div>
-    </div>
+    </AnimatedComponent>
   );
 };
 
