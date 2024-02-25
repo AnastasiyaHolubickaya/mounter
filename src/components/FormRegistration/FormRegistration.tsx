@@ -35,7 +35,7 @@ const initialValues: FormValuesType = {
 const FormRegistration = ({ onSubmitSuccess }: FormProps) => {
   const apiUrl =
     process.env.NODE_ENV === 'production'
-      ? 'https://fascinating-tiramisu-764675.netlify.app/users/registration'
+      ? 'https://mounter-app.netlify.app/users/registration'
       : 'http://localhost:3000/users/registration';
 
   const { t } = useTranslation();

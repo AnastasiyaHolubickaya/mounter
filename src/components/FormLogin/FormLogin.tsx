@@ -30,7 +30,7 @@ const initialValues: FormValuesType = {
 const FormLogin = ({ onSubmitSuccess }: FormProps) => {
   const apiUrl =
     process.env.NODE_ENV === 'production'
-      ? 'https://fascinating-tiramisu-764675.netlify.app/users/auth'
+      ? 'https://mounter-app.netlify.app/users/auth'
       : 'http://localhost:3000/users/auth';
 
   const { t } = useTranslation();
