@@ -89,11 +89,12 @@ const FormRegistration = ({ onSubmitSuccess }: FormProps) => {
       .catch(({ response }) => {
         if (response.status === 500) {
           setErrorMessage(t('serverError'));
-        }
-        if (response.status === 400) {
+        } else if (response.status === 400) {
           setErrorMessage(t('badRequest'));
+        } else {
+          setErrorMessage(`${response.status}, t('unknownErrors')`);
         }
-        setErrors(response.data.message || t('unknownError'));
+        setErrors(response.data?.message || t('unknownError'));
       })
       .finally(() => {
         setSubmitting(false);

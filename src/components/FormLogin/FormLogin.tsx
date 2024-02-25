@@ -84,7 +84,7 @@ const FormLogin = ({ onSubmitSuccess }: FormProps) => {
             setErrorMessage(t('messageMail'));
           }
         } else {
-          setErrorMessage(t('unknownErrors'));
+          setErrorMessage(`${response.status}, t('unknownErrors')`);
         }
         setErrors(response.data?.message || t('unknownErrors'));
         setIsAuthenticated(false);
