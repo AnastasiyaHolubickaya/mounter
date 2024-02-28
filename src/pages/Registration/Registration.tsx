@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 // * Styles
@@ -9,15 +9,18 @@ import Wrapper from '../../components/Wrapper/Wrapper';
 import FormRegistration from '../../components/FormRegistration/FormRegistration';
 
 const Registration = () => {
+  //* Use translation hook for language localization
   const { t } = useTranslation();
 
+  //* Use navigate hook for programmatic navigation
   const navigate = useNavigate();
 
-  const onSubmitSuccess = () => {
+  //* Wrap the onSubmitSuccess function in useCallback to memoize it
+  const onSubmitSuccess = useCallback(() => {
     setTimeout(() => {
       navigate('/auth');
     }, 1000);
-  };
+  }, [navigate]);
 
   return (
     <>

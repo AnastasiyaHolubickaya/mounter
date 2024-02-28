@@ -10,6 +10,7 @@ import Banner from '../../components/Banner/Banner';
 import Wrapper from '../../components/Wrapper/Wrapper';
 import GalleryItem from '../../components/GalleryItem/GalleryItem';
 
+//* Define the prop types for the Gallery component
 type GalleryPropsType = {
   src: {
     medium: string;
@@ -19,12 +20,14 @@ type GalleryPropsType = {
 };
 
 const Gallery = () => {
+  //* State variables for managing images, page count, and current page
   const [images, setImages] = useState<GalleryPropsType[]>([]);
 
   const [pageCount, setPageCount] = useState(1);
 
   const [currentPage, setCurrentPage] = useState(0);
 
+  //* Function to fetch images from the Pexels API
   const fetchImages = (selectedPage = 0) => {
     axios
       .get('https://api.pexels.com/v1/curated', {
@@ -38,20 +41,24 @@ const Gallery = () => {
         },
       })
       .then((response) => {
+        //* Update state with the fetched images and calculate the page count
         setImages(response.data.photos);
-
         setPageCount(Math.ceil(response.data.total_results / 20));
       })
       .catch((error) => {
+        //* Log an error if the image fetching fails
         console.error('Error fetching images:', error);
       });
   };
 
+  //* Fetch images when the component mounts
   useEffect(() => {
     fetchImages();
   }, []);
 
+  //* Event handler for handling page clicks
   const handlePageClick = (selectedPage: { selected: number }) => {
+    //* Update current page and fetch images for the selected page
     setCurrentPage(selectedPage.selected);
     fetchImages(selectedPage.selected);
   };

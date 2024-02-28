@@ -15,6 +15,7 @@ import Wrapper from '../../components/Wrapper/Wrapper';
 import Pricing from '../../components/Pricing/Pricing';
 
 const About = () => {
+  //* Use translation hook for language localization
   const { t } = useTranslation();
 
   return (

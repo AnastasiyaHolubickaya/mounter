@@ -15,6 +15,7 @@ import Logo from '../Logo/Logo';
 import Wrapper from '../Wrapper/Wrapper';
 import AnimatedComponent from '../AnimatedComponent/AnimatedComponent';
 
+//* Type definitions for props
 type LinksPropsType = {
   path: string;
   text: string;
@@ -28,8 +29,10 @@ type PreviewPropsType = {
 };
 
 const Footer = () => {
+  //* Initialize translation hook
   const { t } = useTranslation();
 
+  //* Retrieve data from translation for links, titles, and previews
   const links: LinksPropsType[] = t('importantLinks', {
     returnObjects: true,
   });
@@ -99,18 +102,27 @@ const Footer = () => {
               <span className={styles.title}>{footerTitles[2]}</span>
               <span>{t('slogan')}</span>
               <div className={styles.icons}>
-                <div className={styles.socialIcon}>
+                <Link
+                  to="https://www.pinterest.com/"
+                  className={styles.socialIcon}
+                >
                   <FaPinterest className={styles.icon} />
-                </div>
-                <div className={styles.socialIcon}>
+                </Link>
+                <Link to="https://twitter.com/" className={styles.socialIcon}>
                   <FaTwitter className={styles.icon} />
-                </div>
-                <div className={styles.socialIcon}>
+                </Link>
+                <Link
+                  to="https://www.instagram.com/"
+                  className={styles.socialIcon}
+                >
                   <FaInstagram className={styles.icon} />
-                </div>
-                <div className={styles.socialIcon}>
+                </Link>
+                <Link
+                  to="https://www.facebook.com/"
+                  className={styles.socialIcon}
+                >
                   <FaFacebook className={styles.icon} />
-                </div>
+                </Link>
               </div>
             </div>
           </AnimatedComponent>

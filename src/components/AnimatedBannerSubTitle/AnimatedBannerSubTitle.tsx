@@ -1,7 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+//*Styled
 import styled, { keyframes } from 'styled-components';
 
+//* Keyframes for the fade-in-out animation
 const fadeOutIn = keyframes`
   0%, 100% {
     opacity: 0;
@@ -12,6 +14,8 @@ const fadeOutIn = keyframes`
     transform: translateY(0);
   }
 `;
+
+//* Styled component for the animated subtitle
 const SubTitle = styled.h2`
   width: 90%;
   font-size: 20px;

@@ -10,11 +10,13 @@ import Banner from '../../components/Banner/Banner';
 import Accordeon from '../../components/Accordeon/Accordeon';
 import Picture from '../../components/Picture/Picture';
 
+//* Define prop types for the accordion items
 type AccordeonListPropsType = {
   title: string;
   content: string;
 };
 
+//* Define prop types for the service list items
 type ServiceListPropsType = {
   icon: string;
   title: string;
@@ -22,8 +24,10 @@ type ServiceListPropsType = {
 };
 
 const Service = () => {
+  //* Use translation hook for language localization
   const { t } = useTranslation();
 
+  //* Fetch accordion list and service list from translations
   const accordeonList: AccordeonListPropsType[] = t('accordeon', {
     returnObjects: true,
   });
@@ -64,7 +68,9 @@ const Service = () => {
   );
 };
 
+//* Memoized Item component to prevent unnecessary renders
 const Item = memo(({ icon, title, text }: ServiceListPropsType) => {
+  //* Function to parse SVG string and render it as an image
   const parseSVG = useCallback((svgString: string) => {
     const encoded = encodeURIComponent(svgString);
 
@@ -77,7 +83,6 @@ const Item = memo(({ icon, title, text }: ServiceListPropsType) => {
         <div className={styles.svg}>{parseSVG(icon)}</div>
         <h4 className={styles.title}>{title}</h4>
       </div>
-
       <p className={styles.text}>{text}</p>
     </div>
   );

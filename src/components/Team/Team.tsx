@@ -16,18 +16,17 @@ type propsType = {
 const Team = () => {
   const { t } = useTranslation();
 
+  //* Fetch skills data from translations
   const photo: propsType[] = t('teamGallery', {
     returnObjects: true,
   });
-
-  const firstThreePhotos: propsType[] = photo.slice(0, 3);
 
   return (
     <Wrapper>
       <section>
         <Title title={t('titleTeam')} subtitle={t('subTitle')} />
         <div className={styles.items}>
-          {firstThreePhotos.map((element, index) => (
+          {photo.map((element, index) => (
             <ItemTeam
               key={'image item -' + element + index}
               src={element.src}

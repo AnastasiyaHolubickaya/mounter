@@ -12,29 +12,38 @@ import ButtonUp from './components/ButtonUp/ButtonUp';
 import AuthContext from './authContext';
 
 function App() {
+  //* State to determine if scrolling is active
   const [isScrollOn, setisScrollOn] = useState(false);
 
+  //* State to determine if a mobile device is used
   const [isMobile, setIsMobile] = useState(window.innerWidth < 767);
 
+  //* State to determine if the user is authenticated
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  //* Scroll event handler function
   const handleScroll = useCallback(() => {
     setisScrollOn(window.scrollY > 100);
   }, [setisScrollOn]);
 
+  //* Resize event handler function
   const handleResize = useCallback(() => {
     setIsMobile(window.innerWidth < 767);
   }, [setIsMobile]);
 
+  //* Set up event listeners on component mount
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
+
+    //* Remove event listeners on component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
   }, [handleScroll, handleResize]);
 
+  //* Authentication context for passing down the component tree
   const authContextValue = {
     isAuthenticated,
     setIsAuthenticated,

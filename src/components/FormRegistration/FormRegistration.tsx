@@ -34,10 +34,11 @@ const initialValues: FormValuesType = {
 };
 
 const FormRegistration = ({ onSubmitSuccess }: FormProps) => {
+  //* Localization hook
   const { t } = useTranslation();
 
+  //* State for error and success messages
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const validation = (values: FormValuesType) => {
@@ -70,6 +71,7 @@ const FormRegistration = ({ onSubmitSuccess }: FormProps) => {
     return errors;
   };
 
+  //* Form submission function
   const onSubmit = (
     values: FormValuesType,
     { resetForm, setErrors, setSubmitting }: FormikHelpers<FormValuesType>

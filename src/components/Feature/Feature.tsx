@@ -16,8 +16,10 @@ export type itemsPropsType = {
 };
 
 const Feature = () => {
+  //* Initialize translation hook
   const { t } = useTranslation();
 
+  //* Retrieve accordion items from translation
   const accordeonList: itemsPropsType[] = t('accordeon', {
     returnObjects: true,
   });

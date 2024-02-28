@@ -20,10 +20,12 @@ const Service = lazy(() => import('./pages/Service/Service'));
 const Registration = lazy(() => import('./pages/Registration/Registration'));
 const Auth = lazy(() => import('./pages/Auth/Auth'));
 
+//* Element component to wrap lazy-loaded components in Suspense
 const Element = ({ component }: ElementPropsType) => {
   return <Suspense fallback={<Loading />}>{component}</Suspense>;
 };
 
+//* Creating a browser router with specified routes and lazy-loaded components
 export default createBrowserRouter([
   {
     path: '/',

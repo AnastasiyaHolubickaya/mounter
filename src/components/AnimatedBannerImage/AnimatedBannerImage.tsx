@@ -1,5 +1,7 @@
 import { memo } from 'react';
+//*Styles
 import styled from 'styled-components';
+//*Animations
 import {
   flipInY,
   bounceInDown,
@@ -12,11 +14,13 @@ import {
 } from './animations';
 import { AnimationName } from '../../types/animationTypes';
 
+//* Define the prop types for the component
 type propsType = {
   src: string;
   animationName: AnimationName;
 };
 
+//* Styled component for the animated image
 const Image = styled.img<{ animationName: AnimationName }>`
   position: absolute;
   animation-duration: ${({ animationName }) =>

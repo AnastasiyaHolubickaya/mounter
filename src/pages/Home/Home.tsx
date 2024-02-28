@@ -1,7 +1,5 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-//*Styles
-//import styles from './Home.module.css';
 //*Data
 import { imageData } from './imageData';
 //*Components
@@ -18,6 +16,7 @@ export type itemPropsType = {
 };
 
 const Home = () => {
+  //* Use translation hook for language localization
   const { t } = useTranslation();
 
   const comments: itemPropsType[] = t('comments', {

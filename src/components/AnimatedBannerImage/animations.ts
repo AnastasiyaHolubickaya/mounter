@@ -1,5 +1,6 @@
 import { keyframes } from 'styled-components';
 
+// Bounce In Down Animation pen
 export const bounceInDown = keyframes`
 0% {
   opacity: 0;
@@ -21,6 +22,7 @@ export const bounceInDown = keyframes`
 }
 `;
 
+// Flip In Y Animation pencile
 export const flipInY = keyframes`
   0% {
     opacity: 0;
@@ -33,6 +35,7 @@ export const flipInY = keyframes`
   }
 `;
 
+// Bounce In Up Animation 'marker
 export const bounceInUp = keyframes`
   0% {
     opacity: 0;
@@ -57,6 +60,7 @@ export const bounceInUp = keyframes`
   }
 `;
 
+// Bounce Up Animation knife
 export const bounceUp = keyframes`
   0% {
     opacity: 0;
@@ -81,6 +85,7 @@ export const bounceUp = keyframes`
   }
 `;
 
+// Zoom In Animation plant
 export const zoomIn = keyframes`
   0% {
     opacity: 0;
@@ -92,6 +97,7 @@ export const zoomIn = keyframes`
   }
 `;
 
+// Rotate In Animation pencup
 export const rotateIn = keyframes`
   0% {
     opacity: 0;
@@ -104,6 +110,7 @@ export const rotateIn = keyframes`
   }
 `;
 
+// Fade In Left Animation flower2
 export const fadeInLeft = keyframes`
   0% {
     opacity: 0;
@@ -116,6 +123,7 @@ export const fadeInLeft = keyframes`
   }
 `;
 
+// Fade In Right Animation flower1
 export const fadeInRight = keyframes`
   0% {
     opacity: 0;

@@ -20,10 +20,13 @@ type dataType = {
 };
 
 const Banner = ({ imageData = [] }: dataType) => {
+  //* React i18next hook for language localization
   const { t } = useTranslation();
 
+  //* React Router hook for getting the current location
   const { pathname } = useLocation();
 
+  //* React Spring hook for handling animation properties
   const props = useSpring({
     to: { opacity: 1 },
     from: { opacity: 0 },
@@ -31,6 +34,7 @@ const Banner = ({ imageData = [] }: dataType) => {
     config: { duration: 600 },
   });
 
+  //* Function to determine the page title based on the pathname
   const getPage = useCallback((pathname: string) => {
     const pageTitles: Record<string, string> = {
       '/': 'homeTitle',

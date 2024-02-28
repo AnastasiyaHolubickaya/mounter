@@ -4,8 +4,11 @@ import { useTranslation } from 'react-i18next';
 import styles from './Breadcrumbs.module.css';
 
 const Breadcrumbs = () => {
+  //* Get current location and translation function
   const location = useLocation();
   const { t } = useTranslation();
+
+  //* Extract pathnames from the current URL
   const pathnames = location.pathname.split('/').filter((x) => x);
 
   return (

@@ -9,10 +9,12 @@ import Banner from '../../components/Banner/Banner';
 import FormLogin from '../../components/FormLogin/FormLogin';
 
 const Auth = () => {
+  //* Use translation hook for language localization
   const { t } = useTranslation();
 
   const navigate = useNavigate();
 
+  //* Function to execute on successful form submission
   const onSubmitSuccess = () => {
     setTimeout(() => {
       navigate('/');

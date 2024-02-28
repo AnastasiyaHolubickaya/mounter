@@ -8,6 +8,7 @@ import styles from './Skill.module.css';
 import Title from '../Title/Title';
 import CircularProgress from '../CircularProgress/CircularProgress';
 
+//* Define types for data and item props
 type DataPropsType = {
   name: string;
   text: string;
@@ -21,6 +22,7 @@ type ItemPropsType = {
 
 const Skill = () => {
   const { t } = useTranslation();
+  //* Fetch skills data from translations
   const skills: DataPropsType[] = t('skills', { returnObjects: true });
 
   return (
@@ -43,6 +45,7 @@ const Skill = () => {
 };
 
 const Item = memo(({ text, name, id }: ItemPropsType) => {
+  //* Use Intersection Observer to determine if the component is in view
   const [ref, inView] = useInView({
     triggerOnce: true,
   });

@@ -1,12 +1,12 @@
-import { memo, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+// * Styles
+import styles from './Gallery.module.css';
 //*Components
 import Title from '../Title/Title';
 import Wrapper from '../Wrapper/Wrapper';
 import Sorting from '../Sorting/Sorting';
 import AnimatedComponent from '../AnimatedComponent/AnimatedComponent';
-// * Styles
-import styles from './Gallery.module.css';
 import GalleryItem from '../GalleryItem/GalleryItem';
 
 type GalleryPropsType = {
@@ -18,24 +18,31 @@ type GalleryPropsType = {
 };
 
 const Gallery = () => {
+  //* State to keep track of the selected category
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  //* Translation hook
   const { t } = useTranslation();
 
+  //* Fetching gallery images from translations
   const images: GalleryPropsType[] = t('imagesGallery', {
     returnObjects: true,
   });
 
+  //* Filter images based on the selected category
   const filteredImages = selectedCategory
     ? images.filter((image) => image.category === selectedCategory)
     : images;
 
+  //* Extracting unique categories from the images
   const categories: string[] = Array.from(
     new Set(images.map((image) => image.category || ''))
   );
 
-  const handleCategoryClick = (category: string | null) => {
+  //* Handler for category selection
+  const handleCategoryClick = useCallback((category: string | null) => {
     setSelectedCategory(category);
-  };
+  }, []);
 
   return (
     <section>

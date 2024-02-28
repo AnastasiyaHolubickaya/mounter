@@ -10,17 +10,24 @@ import Wrapper from '../Wrapper/Wrapper.tsx';
 import AuthContext from '../../authContext.ts';
 
 const LanguageSwitcher = () => {
+  //* Destructuring context values from AuthContext
   const { isScrollOn, isMobile } = useContext(AuthContext);
 
+  //* Accessing i18n instance for translations
   const { i18n } = useTranslation();
 
+  //* State to track the selected language
   const [selectedLanguage, setSelectedLanguage] = useState(LOCALS.EN);
 
+  //* Effect to handle language change
   useEffect(() => {
     const changeLanguage = async () => {
       if (selectedLanguage === LOCALS.UK) {
         try {
+          //*Dynamically import the Ukrainian language module
           const ukModule = await import('../../i18n/translations/uk.json');
+
+          //* Add the Ukrainian language resources to i18n
           i18n.addResourceBundle(
             selectedLanguage,
             'translation',
@@ -28,6 +35,8 @@ const LanguageSwitcher = () => {
             true,
             true
           );
+
+          //* Change the language to Ukrainian
           i18n.changeLanguage(selectedLanguage);
         } catch (error) {
           console.error('Failed to load the UK language module', error);

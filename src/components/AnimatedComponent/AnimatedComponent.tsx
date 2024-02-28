@@ -8,6 +8,7 @@ type propsType = {
   children: ReactNode;
 };
 
+//* Animation configurations for fade-in and fade-out
 const fadeIn = {
   opacity: 1,
   transform: 'translateY(0) scale(1)',
@@ -23,6 +24,7 @@ const AnimatedComponent = ({ children }: propsType) => {
     triggerOnce: true,
   });
 
+  //* React Spring hook for defining animation properties
   const props = useSpring({
     ...(inView ? fadeIn : fadeOut),
     config: { tension: 600, friction: 50 },

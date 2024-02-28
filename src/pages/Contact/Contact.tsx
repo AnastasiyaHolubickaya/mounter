@@ -10,6 +10,7 @@ import Wrapper from '../../components/Wrapper/Wrapper';
 import ContactAddress from '../../components/ContactAddress/ContactAddress';
 
 const Contact = () => {
+  //* Use translation hook for language localization
   const { t } = useTranslation();
 
   return (

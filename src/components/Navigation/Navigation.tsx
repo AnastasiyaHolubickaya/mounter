@@ -1,4 +1,11 @@
-import { SetStateAction, memo, useContext, useState } from 'react';
+import {
+  Dispatch,
+  SetStateAction,
+  memo,
+  useCallback,
+  useContext,
+  useState,
+} from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { animated, useSpring } from 'react-spring';
@@ -24,18 +31,24 @@ type ItemPropsType = {
   subMenu?: DataPropsType[];
   isMobile?: boolean;
   isAuthenticated?: boolean;
-  setIsAuthenticated?: any;
+  setIsAuthenticated?: Dispatch<SetStateAction<boolean>>;
 };
 
 type NavigationPropsType = {
   setOpen: React.Dispatch<SetStateAction<boolean>>;
 };
 
+/**
+ * Navigation component responsible for rendering the menu and handling interactions.
+ * @param {NavigationPropsType} props - Props for the Navigation component.
+ */
 const Navigation = ({ setOpen }: NavigationPropsType) => {
   const { isMobile, isAuthenticated, setIsAuthenticated } =
     useContext(AuthContext);
+
   const { t } = useTranslation();
 
+  //* Extract menu items from translation
   const menuFirst: Array<DataPropsType> = t('list.menuFirst', {
     returnObjects: true,
   });
@@ -46,6 +59,7 @@ const Navigation = ({ setOpen }: NavigationPropsType) => {
 
   const subMenu: DataPropsType[] = t('list.subMenu', { returnObjects: true });
 
+  //*Handle onClick event to close the menu.
   const handleOnClick = () => {
     setOpen(false);
   };
@@ -86,6 +100,10 @@ const Navigation = ({ setOpen }: NavigationPropsType) => {
   );
 };
 
+/**
+ * Item component represents a single item in the navigation menu.
+ * @param {ItemPropsType} props - Props for the Item component.
+ */
 const Item = memo(
   ({
     path,
@@ -104,23 +122,38 @@ const Item = memo(
       config: { tension: 600, friction: 60 },
     });
 
+    //*Handle mouse enter event to open the sub-menu.
     const handleMouseEnter = () => {
       setIsSubMenuOpen(true);
     };
 
+    //*Handle mouse leave event to close the sub-menu.
     const handleMouseLeave = () => {
       setIsSubMenuOpen(false);
     };
 
-    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-      if (path === '#') {
-        e.stopPropagation();
-        setIsSubMenuOpen(!isSubMenuOpen);
-      }
-      if (path === '/auth' && isAuthenticated) {
-        setIsAuthenticated(false);
-      }
-    };
+    /**
+     * Handle click event for item.
+     * @param {React.MouseEvent<HTMLAnchorElement>} e - The click event.
+     */
+    const handleClick = useCallback(
+      (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (path === '#') {
+          e.stopPropagation();
+          setIsSubMenuOpen(!isSubMenuOpen);
+        }
+        if (path === '/auth' && isAuthenticated && setIsAuthenticated) {
+          setIsAuthenticated(false);
+        }
+      },
+      [
+        path,
+        setIsSubMenuOpen,
+        isSubMenuOpen,
+        isAuthenticated,
+        setIsAuthenticated,
+      ]
+    );
 
     return (
       <li

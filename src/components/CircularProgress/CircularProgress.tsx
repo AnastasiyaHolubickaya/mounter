@@ -8,14 +8,18 @@ type PropsType = {
 };
 
 const CircularProgress = ({ percent, id }: PropsType) => {
+  //* Довжина кола
   const circumference = 80;
 
+  //* Calculate offset
   const offset = ((100 - percent) * circumference * Math.PI) / 100;
 
+  //* Intersection observer hook
   const [ref, inView] = useInView({
     triggerOnce: true,
   });
 
+  //* Unique ID for each instance
   const uniqueId = `progress-${id}`;
 
   const [progressAnimation, setProgressAnimation] = useSpring(() => ({
@@ -24,6 +28,7 @@ const CircularProgress = ({ percent, id }: PropsType) => {
     config: { duration: 1000 },
   }));
 
+  //* Effect to start animation when component is in view
   useEffect(() => {
     if (inView) {
       setProgressAnimation({
