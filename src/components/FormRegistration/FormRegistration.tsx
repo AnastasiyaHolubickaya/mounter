@@ -38,8 +38,8 @@ const FormRegistration = ({ onSubmitSuccess }: FormProps) => {
   const { t } = useTranslation();
 
   //* State for error and success messages
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [successMessage, setSuccessMessage] = useState<string>('');
 
   const validation = (values: FormValuesType) => {
     const errors: FormikErrors<FormValuesType> = {};

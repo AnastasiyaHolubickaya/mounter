@@ -55,7 +55,7 @@ const Map = () => {
       };
 
       //* Create the GeoSearchControl
-      const geoSearchControl = new (GeoSearchControl as any)(
+      const geoSearchControl = new (GeoSearchControl as unknown as any)(
         searchControlOptions
       );
 

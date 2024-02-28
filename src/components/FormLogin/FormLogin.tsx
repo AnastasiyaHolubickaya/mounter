@@ -33,7 +33,7 @@ const FormLogin = ({ onSubmitSuccess }: FormProps) => {
   const { t } = useTranslation();
 
   //* Authentication context
-  const { setIsAuthenticated } = useContext(AuthContext);
+  const { appState, setAppState } = useContext(AuthContext);
 
   //* State for error and success messages
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -69,7 +69,7 @@ const FormLogin = ({ onSubmitSuccess }: FormProps) => {
       .then(({ data }) => {
         localStorage.setItem('token', data.token);
         setSuccessMessage(t('authorizationSuccess'));
-        setIsAuthenticated(true);
+        setAppState({ ...appState, isAuthenticated: true });
         onSubmitSuccess();
         resetForm({ values: initialValues });
       })
@@ -87,7 +87,7 @@ const FormLogin = ({ onSubmitSuccess }: FormProps) => {
           setErrorMessage(`${response.status}, ${t('unknownErrors')}`);
         }
         setErrors(response.data?.message || t('unknownErrors'));
-        setIsAuthenticated(false);
+        setAppState({ ...appState, isAuthenticated: false });
       })
       .finally(() => {
         setSubmitting(false);

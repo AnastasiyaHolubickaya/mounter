@@ -11,7 +11,7 @@ import AuthContext from '../../authContext.ts';
 
 const LanguageSwitcher = () => {
   //* Destructuring context values from AuthContext
-  const { isScrollOn, isMobile } = useContext(AuthContext);
+  const { appState } = useContext(AuthContext);
 
   //* Accessing i18n instance for translations
   const { i18n } = useTranslation();
@@ -53,7 +53,7 @@ const LanguageSwitcher = () => {
     <div
       className={cn([
         styles.switcher_panel,
-        (isScrollOn || isMobile) && styles.fixed,
+        (appState.isScrollOn || appState.isMobile) && styles.fixed,
       ])}
     >
       <Wrapper>

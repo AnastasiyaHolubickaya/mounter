@@ -69,7 +69,7 @@ const Service = () => {
 };
 
 //* Memoized Item component to prevent unnecessary renders
-const Item = memo(({ icon, title, text }: ServiceListPropsType) => {
+const Item = ({ icon, title, text }: ServiceListPropsType) => {
   //* Function to parse SVG string and render it as an image
   const parseSVG = useCallback((svgString: string) => {
     const encoded = encodeURIComponent(svgString);
@@ -86,6 +86,6 @@ const Item = memo(({ icon, title, text }: ServiceListPropsType) => {
       <p className={styles.text}>{text}</p>
     </div>
   );
-});
+};
 
 export default memo(Service);

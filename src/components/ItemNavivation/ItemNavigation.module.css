@@ -1,0 +1,79 @@
+.item {
+  position: relative;
+}
+
+.icon {
+  font-size: 10px;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  color: var(--c-secondary);
+}
+
+.icon_list {
+  right: -3px;
+}
+.sub_menu {
+  width: 230px;
+  height: 0;
+  background: #ffffff none repeat scroll 0 0;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  opacity: 0;
+  padding: 12px 0;
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.12), 7px 0 12px rgba(0, 0, 0, 0.12);
+}
+
+.sub_menu.show {
+  opacity: 1;
+  height: auto;
+}
+
+.sub_menu_mob {
+  position: relative;
+  background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+}
+
+.sub_menu .link {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.sub_menu .link:hover {
+  color: var(--c-third);
+}
+.sub_menu_mob .link {
+  color: var(--c-secondary);
+}
+.link {
+  padding-inline: 25px;
+  font-weight: 600;
+  line-height: 16px;
+  color: var(--c-secondary);
+
+  &:hover {
+    color: var(--c-third);
+  }
+
+  @media screen and (max-width: 950px) {
+    padding-inline: 10px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 1em 5%;
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      color: var(--c-secondary);
+    }
+  }
+}
+
+.link:hover .icon {
+  color: var(--c-third);
+}

@@ -10,22 +10,25 @@ import Logo from '../Logo/Logo';
 import AuthContext from '../../authContext';
 
 const Header = () => {
-  const { isScrollOn, isMobile } = useContext(AuthContext);
+  const { appState } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
 
   return (
     <header
-      className={cn([styles.header, (isScrollOn || isMobile) && styles.fixed])}
+      className={cn([
+        styles.header,
+        (appState.isScrollOn || appState.isMobile) && styles.fixed,
+      ])}
     >
       <Wrapper>
-        {isMobile && (
+        {appState.isMobile && (
           <div className={styles.mobile_navigation}>
             <Logo />
             <Burger open={open} setOpen={setOpen} />
           </div>
         )}
-        {isMobile && open && <Navigation setOpen={setOpen} />}
-        {!isMobile && <Navigation setOpen={setOpen} />}
+        {appState.isMobile && open && <Navigation setOpen={setOpen} />}
+        {!appState.isMobile && <Navigation setOpen={setOpen} />}
       </Wrapper>
     </header>
   );

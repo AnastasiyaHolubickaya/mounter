@@ -8,6 +8,7 @@
 
 .item {
   width: 100%;
+  max-width: 712px;
   background-color: var(--c-third);
   border: 0 none;
   border-radius: 27px;
@@ -36,6 +37,7 @@
   border: none;
   text-align: left;
   padding: 25px 30px;
+  max-width: 486px;
 
   @media (max-width: 500px) {
     padding-top: 10px;

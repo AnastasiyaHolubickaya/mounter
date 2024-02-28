@@ -1,17 +1,27 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
 
-type AuthContextProps = {
-  isAuthenticated: boolean;
-  setIsAuthenticated: Dispatch<SetStateAction<boolean>>;
-  isScrollOn: boolean;
-  isMobile: boolean;
+export type AuthContextProps = {
+  appState: {
+    isScrollOn: boolean;
+    isMobile: boolean;
+    isAuthenticated: boolean;
+  };
+  setAppState: Dispatch<
+    SetStateAction<{
+      isScrollOn: boolean;
+      isMobile: boolean;
+      isAuthenticated: boolean;
+    }>
+  >;
 };
 
 const AuthContext = createContext<AuthContextProps>({
-  isAuthenticated: false,
-  setIsAuthenticated: () => {},
-  isScrollOn: true,
-  isMobile: true,
+  appState: {
+    isScrollOn: false,
+    isMobile: window.innerWidth < 767,
+    isAuthenticated: false,
+  },
+  setAppState: () => {},
 });
 
 export default AuthContext;
